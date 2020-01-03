@@ -1,0 +1,41 @@
+.nav{
+    background-color: #1d1d33;
+    width:100%;
+    height: 50px;
+    display:grid;
+    grid-template-columns: 10px 620px  200px 100px 100px 100px 100px;
+    text-decoration:none;
+    padding-top: 20px;
+    font-size: 20px;;
+
+}
+
+.navlogo{
+    width:65px;
+    height: 65px;
+    margin-top:-17px ;
+    background-color:blanchedalmond;
+    border-radius: 50px;
+}
+.home{
+    text-decoration:none;
+    color: cadetblue;
+}
+.Register{
+    text-decoration:none;
+    color: cadetblue;
+
+}
+.Login{
+    text-decoration:none;
+    color: cadetblue;
+
+}
+.heading{
+    color:red;
+}
+.Order{
+    text-decoration:none;
+    color: cadetblue;
+
+}
