@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import '../css/Footer.css';
+import { SocialIcon } from 'react-social-icons';
 
 class navComponents extends Component {
     render() {
         return (
             <div className="footer">
-               <div>@Copyright2020</div>
-               <div>www.OnlineFoodservice.com</div>
+               <div className="down">@Copyright2020</div>
+               <div  className="down">www.OnlineFoodservice.com</div>
                 <div className="social">
-                    <i class="fa fa-instagram" ></i>
-                    <i class="fa fa-whatsapp" ></i>
-                    <i class="fa fa-twitter"></i>   
-                    <i class="fa fa-facebook-f" ></i>   
+                <SocialIcon url="http://twitter.com/jaketrent" className="icons" />                  
+                <SocialIcon url="http://linkedin.com/in/jaketrent" className="icons" /> 
+                <SocialIcon url="http://facebook.com/in/jaketrent"  className="icons"/> 
+
                 </div>         
             </div>
         );

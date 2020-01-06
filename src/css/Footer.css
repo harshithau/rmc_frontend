@@ -2,10 +2,13 @@
     background-color: #1d1d33;
     height: 50px;
   width: 100%;
-   
+   padding: 9px;;
    font-size: 20px;
    color: paleturquoise;
    display: grid;
-   grid-template-columns:200px 960px 100px ;
+   grid-template-columns:200px 830px 250px ;
  
+}
+.down{
+  margin-top:15px;
 }

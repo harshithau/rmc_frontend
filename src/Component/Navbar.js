@@ -8,8 +8,9 @@ class Navbar extends Component {
         <div >
           <nav className="nav">
         <img src={profile} className="navlogo"/>
-        <a className="heading">Online Food Service</a>
+        <a className="heading">Online Rmc Service</a>
         <a className="home" href='/'>Home</a>
+        <a className="home" href='/'>RMC Details</a>
         <a className="Register" href='/'>Register</a>
         <a className="Login" href='/'>Login</a>
         <a className="Order" href='/'>Order</a>

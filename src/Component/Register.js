@@ -1,118 +1,102 @@
 import React, { Component } from 'react';
 import '../css/Register.css';
 import logo from '../image/Rmclogo.jpg';
+import singupAction from '../Action/signupAction';
+import {signup} from './userBackendFun';
 
 class Register extends Component {
     constructor() {
         super();
         this.state = {
-          fields: {},
-          errors: {}
-        }
+          Firstname: '',
+          Lastname: '',
+          email: '',
+          password: '',
+          Confirmpassword: '',
+          Mobnum: '',
+          ferr: '',
+          lerr: '',
+          uerr: '',
+          perr: '',
+          cperr: '',
+          phnerr: '',
+          
+          
+          };
+          }
   
-        this.handleChange = this.handleChange.bind(this);
-        this.submituserRegistrationForm = this.submituserRegistrationForm.bind(this);
-  
-      };
-  
-      handleChange(e) {
-        let fields = this.state.fields;
-        fields[e.target.name] = e.target.value;
-        this.setState({
-          fields
-        });
+        
+onHandleChange=(event)=>{
+        this.setState({ [event.target.name]: event.target.value });
+       
   
       }
-  
-      submituserRegistrationForm(e) {
+      onHandleClick = (e) => {
+        debugger;
         e.preventDefault();
-        if (this.validateForm()) {
-            let fields = {};
-            fields["Firstname"] = "";
-          fields["Lastname"] = "";
-          fields["password"] = "";
-          fields["emailid"] = "";
-          fields["mobileno"] = "";
-          fields["password"] = "";
-            this.setState({fields:fields});
-            alert("Form submitted");
+        const reqst = {
+        Firstname: this.state.Firstname,
+        Lastname: this.state.Lastname,
+        email: this.state.email,
+        password: this.state.password,
+        Confirmpassword: this.state.Confirmpassword,
+        Mobnum: this.state.Mobnum
+        
         }
-  
-      }
-  
-      validateForm() {
-  
-        let fields = this.state.fields;
-        let errors = {};
-        let formIsValid = true;
-  
-        if (!fields["Firstname"]) {
-                  formIsValid = false;
-                  errors["Firstname"] = "*Please enter your Firstname.";
-                }
-          
-                if (typeof fields["Firstname"] !== "undefined") {
-                  if (!fields["Firstname"].match(/^[a-zA-Z ]*$/)) {
-                    formIsValid = false;
-                    errors["Firstname"] = "*Please enter alphabet characters only.";
-                  }
-                }
-                if (!fields["Lastname"]) {
-                  formIsValid = false;
-                  errors["Lastname"] = "*Please enter your Lastname.";
-                }
-          
-                if (typeof fields["Lastname"] !== "undefined") {
-                  if (!fields["Lastname"].match(/^[a-zA-Z ]*$/)) {
-                    formIsValid = false;
-                    errors["Lastname"] = "*Please enter alphabet characters only.";
-                  }
-                }
-                if (!fields["password"]) {
-                  formIsValid = false;
-                  errors["password"] = "*Please enter your password.";
-                }
-          
-                if (typeof fields["password"] !== "undefined") {
-                  if (!fields["password"].match(/^.*(?=.{8,}).*$/)) {
-                    formIsValid = false;
-                    errors["password"] = "*Please enter secure and strong password.";
-                  }
-                }
-          
-          
-                if (!fields["emailid"]) {
-                  formIsValid = false;
-                  errors["emailid"] = "*Please enter your email-ID.";
-                }
-          
-                if (typeof fields["emailid"] !== "undefined") {
-                 
-                  var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-                  if (!pattern.test(fields["emailid"])) {
-                    formIsValid = false;
-                    errors["emailid"] = "*Please enter valid email-ID.";
-                  }
-                }
-          
-                if (!fields["mobileno"]) {
-                  formIsValid = false;
-                  errors["mobileno"] = "*Please enter your mobile no.";
-                }
-          
-                if (typeof fields["mobileno"] !== "undefined") {
-                  if (!fields["mobileno"].match(/^[0-9]{10}$/)) {
-                    formIsValid = false;
-                    errors["mobileno"] = "*Please enter valid mobile no.";
-                  }
-                }
+        signup(reqst).then(res => {
+        if (res.data === "User Created Succesfully") {
+        alert("UserCreated Successfully")
+        // BrowserHistory.push('/login')
+        }
+        
+        })
+        
+        if (this.state.Firstname.length === 0 && this.state.Lastname.length === 0 && this.state.email.length === 0 && this.state.password.length === 0 && this.state.Confirmpassword.length === 0 && this.state.Mobnum.length === 0) {
         this.setState({
-          errors: errors
-        });
-        return formIsValid;
-  
-  
+        ferr: "Firstname is required", lerr: "Lastname is required",
+        uerr: "Email is required",
+        perr: "Password is required",
+        cperr: "ConrimPassword is required",
+        phnerr: "Phonumber is required"
+        
+        })
+        }
+        else if (this.state.Firstname.length === 0) {
+        this.setState({ ferr: "Firstname is required" })
+        }
+        else if (this.state.Lastname.length === 0) {
+        this.setState({ lerr: "Lastname is required" })
+        }
+        else if (this.state.email.length === 0) {
+        this.setState({ uerr: "Username is required" })
+        }
+        else if (this.state.password.length === 0) {
+        this.setState({ perr: "password is required" })
+        }
+        else if (this.state.Confirmpassword.length === 0) {
+        // this.setState({ cperr: "Password is required" })
+        }
+        else if (this.state.Mobnum.length === 0) {
+        this.setState({ phnerr: "Password is required" })
+        }
+        
+        else if (this.state.Firstname.match(/^[A-Za-z]{5}$/)) {
+        this.setState({ ferr: "Please enter the valid fname" })
+        }
+        
+        else if (this.state.password.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
+        this.setState({ perr: "Please enter the valid password" })
+        }
+        else if (this.state.Confirmpassword.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
+        this.setState({ cperr: "Please enter the valid password" })
+        }
+        else if (this.state.Mobnum .match(/^[0-9]{9}$/)) {
+        this.setState({ phnerr: "Please enter the valid number" })
+        }
+        
       }
+
+  
      
   
   
@@ -124,24 +108,28 @@ class Register extends Component {
        <h3>Registration page</h3>
      
         
-          <form method="post"  name="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
+          <form method="post"  name="userRegistrationForm"   >
         <label>FirstName</label>
-       <input type="text" name="Firstname" value={this.state.fields.username} onChange={this.handleChange} />
-         <p className="errorMsg">{this.state.errors.Firstname}</p>
+       <input type="text" name="Firstname" value={this.state.username} onChange={this.onHandleChange} />
+         <p className="errorMsg">{this.state.ferr}</p>
 
         <label>LastName</label>
-        <input type="text" name="Lastname" value={this.state.fields.Lastname} onChange={this.handleChange} />
-         <div className="errorMsg">{this.state.errors.Lastname}</div>
+        <input type="text" name="Lastname" value={this.state.Lastname} onChange={this.onHandleChange} />
+         <div className="errorMsg">{this.state.lerr}</div>
         <label>Email ID:</label>
-         <input type="text" name="emailid" value={this.state.fields.emailid} onChange={this.handleChange}  />
-         <div className="errorMsg">{this.state.errors.emailid}</div>
-         <label>Mobile No:</label>
-         <input type="text" name="mobileno" value={this.state.fields.mobileno} onChange={this.handleChange}   />
-         <div className="errorMsg">{this.state.errors.mobileno}</div>
+         <input type="text" name="email" value={this.state.email} onChange={this.onHandleChange}  />
+         <div className="errorMsg">{this.state.uerr}</div>
+        
          <label>Password</label>
-        <input type="password" name="password" value={this.state.fields.password} onChange={this.handleChange} />
-        <div className="errorMsg">{this.state.errors.password}</div>
-         <button type="submit" className="button"  value="Register">register</button>
+        <input type="password" name="password" value={this.state.password} onChange={this.onHandleChange} />
+        <div className="errorMsg">{this.state.perr}</div>
+        <label>confirmPassword</label>
+        <input type="password" name="Confirmpassword" value={this.state.Confirmpassword} onChange={this.onHandleChange} />
+        <div className="errorMsg">{this.state.cperr}</div>
+        <label>Mobile No:</label>
+         <input type="text" name="Mobnum" value={this.state.Mobnum} onChange={this.onHandleChange}   />
+         <div className="errorMsg">{this.state.phnerr}</div>
+         <button type="submit" className="button"  value="Register" onClick={this.onHandleClick}>register</button>
          </form>
       </div>
   </div>
