@@ -12,6 +12,6 @@ export const signup = regUser => {
             Mobnum: regUser.Mobnum,
         })
         .then(res => {
-            console.log(res)
+            console.log(res.data)
         })
 }

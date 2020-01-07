@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../css/Register.css';
 import logo from '../image/Rmclogo.jpg';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 class LoginForm extends Component {
     constructor() {
@@ -101,6 +103,8 @@ class LoginForm extends Component {
         <div className="errorMsg">{this.state.errors.password}</div>
          <button type="submit" className="button"  value="Register">Login</button>
          </form>
+         <Navbar/>
+         <Footer/>
       </div>
   </div>
   

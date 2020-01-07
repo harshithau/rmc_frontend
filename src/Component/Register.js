@@ -1,143 +1,210 @@
-import React, { Component } from 'react';
-import '../css/Register.css';
+
+
 import logo from '../image/Rmclogo.jpg';
-import singupAction from '../Action/signupAction';
 import {signup} from './userBackendFun';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
-class Register extends Component {
-    constructor() {
-        super();
-        this.state = {
-          Firstname: '',
-          Lastname: '',
-          email: '',
-          password: '',
-          Confirmpassword: '',
-          Mobnum: '',
-          ferr: '',
-          lerr: '',
-          uerr: '',
-          perr: '',
-          cperr: '',
-          phnerr: '',
+import React, { Component } from "react";    
+   
+    
+class Register extends Component {    
+    constructor(props) {    
+        super(props);    
+        this.state = {    
+          Firstname: '', 
+            Lastname:'',
+            password:'',
+            Confirmpassword:'',   
+            email: '',   
+            Mobnum: '',    
+              
+            formErrors: {}    
+        };    
+    
+        this.initialState = this.state;    
+    }    
+    
+    handleFormValidation() {
+      debugger;    
+        const  { Firstname,Lastname, password, Confirmpassword,email, Mobnum } = this.state;   
+        const reqst={Firstname,Lastname, password, Confirmpassword,email, Mobnum} 
+        signup(reqst).then(res=>{
+          console.log(res.data);
+        })
+        let formErrors = {};    
+        let formIsValid = true;  
           
-          
-          };
-          }
-  
         
-onHandleChange=(event)=>{
-        this.setState({ [event.target.name]: event.target.value });
+        if (!Firstname) {    
+          formIsValid = false;    
+          formErrors["fNameErr"] = "Name is required.";    
+      }  
+      
+    if (!Lastname) {    
+      formIsValid = false;    
+      formErrors["lNameErr"] = "Name is required.";    
+  }   
+  if (!password) {    
+    formIsValid = false;    
+    formErrors["pwdErr"] = "password is required.";    
+}  
+if (!Confirmpassword) {    
+  formIsValid = false;    
+  formErrors["cpwdErr"] = "confirmPassword is required.";    
+}  
+    
+        
+        if (!email) {    
+            formIsValid = false;    
+            formErrors["emailErr"] = "Email id is required.";    
+        }    
+        else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))) {    
+    
+            formIsValid = false;    
+            formErrors["emailErr"] = "Invalid email id.";    
+        }    
+        if (!Mobnum) {    
+            formIsValid = false;    
+            formErrors["phoneNumberErr"] = "Phone number is required.";    
+        }    
+        else {    
+            var mobPattern = /^[0-9]{10}$/ ;    
+            if (!mobPattern.test(Mobnum)) {    
+                formIsValid = false;    
+                formErrors["phoneNumberErr"] = "Invalid phone number.";    
+            }    
+        }  
+        if (!password) {    
+          formIsValid = false;    
+          formErrors["pwdErr"] = "Phone number is required.";    
+      }    
+      else {    
+          var pwdPattern = /^.*(?=.{8,}).*$/ ;   
+          if (!pwdPattern.test(password)) {    
+              formIsValid = false;    
+              formErrors["pwdErr"] = "Invalid phone number.";    
+          }    
+      }  
+      if (!Confirmpassword) {    
+        formIsValid = false;    
+        formErrors["cpwdErr"] = "Phone number is required.";    
+    }    
+    else {    
+        var cpwdPattern = /^.*(?=.{8,}).*$/;    
+        if (!cpwdPattern.test(Confirmpassword)) {    
+            formIsValid = false;    
+            formErrors["cpwdErr"] = "Invalid phone number.";    
+        }    
+    }    
+    
        
-  
-      }
-      onHandleClick = (e) => {
-        debugger;
-        e.preventDefault();
-        const reqst = {
-        Firstname: this.state.Firstname,
-        Lastname: this.state.Lastname,
-        email: this.state.email,
-        password: this.state.password,
-        Confirmpassword: this.state.Confirmpassword,
-        Mobnum: this.state.Mobnum
-        
-        }
-        signup(reqst).then(res => {
-        if (res.data === "User Created Succesfully") {
-        alert("UserCreated Successfully")
-        // BrowserHistory.push('/login')
-        }
-        
-        })
-        
-        if (this.state.Firstname.length === 0 && this.state.Lastname.length === 0 && this.state.email.length === 0 && this.state.password.length === 0 && this.state.Confirmpassword.length === 0 && this.state.Mobnum.length === 0) {
-        this.setState({
-        ferr: "Firstname is required", lerr: "Lastname is required",
-        uerr: "Email is required",
-        perr: "Password is required",
-        cperr: "ConrimPassword is required",
-        phnerr: "Phonumber is required"
-        
-        })
-        }
-        else if (this.state.Firstname.length === 0) {
-        this.setState({ ferr: "Firstname is required" })
-        }
-        else if (this.state.Lastname.length === 0) {
-        this.setState({ lerr: "Lastname is required" })
-        }
-        else if (this.state.email.length === 0) {
-        this.setState({ uerr: "Username is required" })
-        }
-        else if (this.state.password.length === 0) {
-        this.setState({ perr: "password is required" })
-        }
-        else if (this.state.Confirmpassword.length === 0) {
-        // this.setState({ cperr: "Password is required" })
-        }
-        else if (this.state.Mobnum.length === 0) {
-        this.setState({ phnerr: "Password is required" })
-        }
-        
-        else if (this.state.Firstname.match(/^[A-Za-z]{5}$/)) {
-        this.setState({ ferr: "Please enter the valid fname" })
-        }
-        
-        else if (this.state.password.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
-        this.setState({ perr: "Please enter the valid password" })
-        }
-        else if (this.state.Confirmpassword.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
-        this.setState({ cperr: "Please enter the valid password" })
-        }
-        else if (this.state.Mobnum .match(/^[0-9]{9}$/)) {
-        this.setState({ phnerr: "Please enter the valid number" })
-        }
-        
-      }
-
-  
-     
-  
-  
-    render() {
-      return (
-      <div id="main-registration-container">
-       <div id="register"> 
-       <img src={logo} className="imgi" />
-       <h3>Registration page</h3>
-     
-        
-          <form method="post"  name="userRegistrationForm"   >
-        <label>FirstName</label>
-       <input type="text" name="Firstname" value={this.state.username} onChange={this.onHandleChange} />
-         <p className="errorMsg">{this.state.ferr}</p>
-
-        <label>LastName</label>
-        <input type="text" name="Lastname" value={this.state.Lastname} onChange={this.onHandleChange} />
-         <div className="errorMsg">{this.state.lerr}</div>
-        <label>Email ID:</label>
-         <input type="text" name="email" value={this.state.email} onChange={this.onHandleChange}  />
-         <div className="errorMsg">{this.state.uerr}</div>
-        
-         <label>Password</label>
-        <input type="password" name="password" value={this.state.password} onChange={this.onHandleChange} />
-        <div className="errorMsg">{this.state.perr}</div>
-        <label>confirmPassword</label>
-        <input type="password" name="Confirmpassword" value={this.state.Confirmpassword} onChange={this.onHandleChange} />
-        <div className="errorMsg">{this.state.cperr}</div>
-        <label>Mobile No:</label>
-         <input type="text" name="Mobnum" value={this.state.Mobnum} onChange={this.onHandleChange}   />
-         <div className="errorMsg">{this.state.phnerr}</div>
-         <button type="submit" className="button"  value="Register" onClick={this.onHandleClick}>register</button>
-         </form>
-      </div>
-  </div>
-  
-        );
-    }
-  
-  
-  }
-
+        this.setState({ formErrors: formErrors });    
+        return formIsValid;    
+    }    
+    
+    handleChange = (e) => {    
+        const { name, value } = e.target;    
+        this.setState({ [name]: value });    
+    }    
+    
+    handleSubmit = (e) => {    
+        e.preventDefault();    
+    
+        if (this.handleFormValidation()) {    
+            alert('You have been successfully registered.')    
+            this.setState(this.initialState)    
+        }    
+    }    
+    
+    render() {    
+    
+        const { fNameErr,lNameErr,pwdErr,cpwdErr, emailErr,  phoneNumberErr, cityErr } = this.state.formErrors;    
+    
+        return (    
+            <div className="formDiv">    
+                <h3 style={{ textAlign: "center" }} >Student Admission Form </ h3>    
+                <div>    
+                    <form onSubmit={this.handleSubmit}>    
+                        <div>    
+                            <label htmlFor="Firstname">FirstName</label>    
+                            <input type="text" name="Firstname"    
+                                value={this.state.Firstname}    
+                                onChange={this.handleChange}    
+                                placeholder="Your name.."    
+                                className={fNameErr ? ' showError' : ''} />    
+                            {fNameErr &&    
+                                <div style={{ color: "red", paddingBottom: 10 }}>{fNameErr}</div>    
+                            }    
+    
+                        </div>   
+                        <div>    
+                            <label htmlFor="Lastname">LastName</label>    
+                            <input type="text" name="Lastname"    
+                                value={this.state.Lastname}    
+                                onChange={this.handleChange}    
+                                placeholder="Your name.."    
+                                className={lNameErr ? ' showError' : ''} />    
+                            {lNameErr &&    
+                                <div style={{ color: "red", paddingBottom: 10 }}>{lNameErr}</div>    
+                            }    
+    
+                        </div>  
+                        <div>    
+                            <label htmlFor="password">password</label>    
+                            <input type="password" name="password"    
+                                value={this.state.password}    
+                                onChange={this.handleChange}    
+                                placeholder="Your name.."    
+                                className={pwdErr ? ' showError' : ''} />    
+                            {pwdErr &&    
+                                <div style={{ color: "red", paddingBottom: 10 }}>{pwdErr}</div>    
+                            }    
+    
+                        </div> 
+                        <div>    
+                            <label htmlFor="Confirmpassword">Confirmpassword</label>    
+                            <input type="password" name="Confirmpassword"    
+                                value={this.state.Confirmpassword}    
+                                onChange={this.handleChange}    
+                                placeholder="Your name.."    
+                                className={cpwdErr ? ' showError' : ''} />    
+                            {cpwdErr &&    
+                                <div style={{ color: "red", paddingBottom: 10 }}>{cpwdErr}</div>    
+                            }  
+                        </div>  
+                        <div>    
+                            <label htmlFor="email">Email Id</label>    
+                            <input type="text" name="email"    
+                                value={this.state.email}    
+                                onChange={this.handleChange}    
+                                placeholder="Your email id.."    
+                                className={emailErr ? ' showError' : ''} />    
+                            {emailErr &&    
+                                <div style={{ color: "red", paddingBottom: 10 }}>{emailErr}</div>    
+                            }    
+    
+                        </div>    
+                        
+                        <div>    
+                            <label htmlFor="phoneNumber">Phone Number</label>    
+                            <input type="text" name="Mobnum"    
+                                onChange={this.handleChange}    
+                                value={this.state.Mobnum}    
+                                placeholder="Your phone number.."    
+                                className={phoneNumberErr ? ' showError' : ''} />    
+                            {phoneNumberErr &&    
+                                <div style={{ color: "red", paddingBottom: 10 }}>{phoneNumberErr}</div>    
+                            }    
+                        </div>    
+                      
+                        <input type="submit" value="Submit" />    
+                    </form>    
+                </div>    
+            </div >    
+        )    
+    }    
+}    
+    
 export default Register;
+
