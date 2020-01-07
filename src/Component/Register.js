@@ -18,8 +18,7 @@ class Register extends Component {
             Confirmpassword:'',   
             email: '',   
             Mobnum: '',    
-              
-            formErrors: {}    
+           formErrors: {}    
         };    
     
         this.initialState = this.state;    
@@ -45,17 +44,15 @@ class Register extends Component {
       formIsValid = false;    
       formErrors["lNameErr"] = "Name is required.";    
   }   
-  if (!password) {    
+    if (!password) {    
+      formIsValid = false;    
+      formErrors["pwdErr"] = "password is required.";    
+  }  
+  if (!Confirmpassword) {    
     formIsValid = false;    
-    formErrors["pwdErr"] = "password is required.";    
-}  
-if (!Confirmpassword) {    
-  formIsValid = false;    
-  formErrors["cpwdErr"] = "confirmPassword is required.";    
-}  
-    
-        
-        if (!email) {    
+    formErrors["cpwdErr"] = "confirmPassword is required.";    
+  }  
+    if (!email) {    
             formIsValid = false;    
             formErrors["emailErr"] = "Email id is required.";    
         }    
@@ -97,9 +94,7 @@ if (!Confirmpassword) {
             formErrors["cpwdErr"] = "Invalid phone number.";    
         }    
     }    
-    
-       
-        this.setState({ formErrors: formErrors });    
+  this.setState({ formErrors: formErrors });    
         return formIsValid;    
     }    
     
@@ -119,7 +114,7 @@ if (!Confirmpassword) {
     
     render() {    
     
-        const { fNameErr,lNameErr,pwdErr,cpwdErr, emailErr,  phoneNumberErr, cityErr } = this.state.formErrors;    
+        const { fNameErr,lNameErr,pwdErr,cpwdErr, emailErr,  phoneNumberErr } = this.state.formErrors;    
     
         return (    
             <div className="formDiv">    

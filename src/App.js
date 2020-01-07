@@ -22,7 +22,7 @@ function App() {
        <Route exact path='/Navbar' component={Navbar}></Route>  
         {/* <Route exact path='/login' component={Login}></Route>  */}
         {/* <Route exact path='/' component={Index}></Route>  */}
-        <Route exact path='/Register' component={Register}></Route> 
+        <Route exact path='/register' component={Register}></Route> 
         <Route exact path='/LoginForm' component={LoginForm}></Route> 
       <Route exact path='/Footer' component={Footer}></Route>  
         </switch>
