@@ -40,7 +40,8 @@
     ]
   },
   "devDependencies": {
-    "react-social-icons": "^4.1.0",
-    "proxy": "http://localhost:4013/"
-  }
+    "react-social-icons": "^4.1.0"
+   
+  },
+  "proxy": "http://localhost:4013/"
 }

@@ -1,0 +1,32 @@
+.table{
+    display: grid;
+    grid-template-columns: 600px 500px;
+    margin-top: 90px;
+    grid-gap: 09px;
+   
+}
+.first{
+    width:450px;
+    height: 250px;
+}
+.second{
+    width:450px;
+    height: 250px;
+}
+.third{
+    width:450px;
+    height: 250px;;
+}
+.four{
+    width:450px;
+    height: 250px;;
+}
+.border{
+    border: 2px solid black;
+  
+   
+}
+.left{
+    margin-left: 90px;
+}
+

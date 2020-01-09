@@ -10,14 +10,30 @@ class Navbar extends Component {
   onChange(){
     BrowserHistory.push('/LoginForm')
   }
+  onHome(){
+    BrowserHistory.push('/Home')
+  }
+  onUser(){
+    BrowserHistory.push('/user')
+
+  }
   render() {
       return (
         <div >
           <nav className="nav">
         <img src={profile} className="navlogo"/>
         <a className="heading">Online Rmc Service</a>
-        <a className="home" href='/'>Home</a>
-        <a className="home" href='/'>RMC Details</a>
+        <a className="home"  onClick={this.onHome}>Home</a>
+        <div class="dropdown">
+    <button class="dropbtn">RMC Details
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a  onClick={this.onUser}>USER</a>
+      <a href="#">Link</a>
+      
+    </div>
+  </div> 
         <a className="Register"onClick={this.onHandleClick}>Register</a>
         <a className="Login"onClick={this.onChange}>Login</a>
         <a className="Order" href='/'>Order</a>

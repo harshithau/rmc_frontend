@@ -1,0 +1,15 @@
+
+.para{
+    background-image:url('../image/background.png') ;
+    color:black;
+    margin: 150px;
+    padding: 30px;
+    padding-top: -20px;
+    /* margin-top: -20px; */
+}
+.frontimg{
+    height: 90px;
+    width:90px;
+    border-radius: 50px;
+}
+

@@ -1,117 +1,134 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import '../css/Register.css';
-import logo from '../image/Rmclogo.jpg';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import BrowserHistory from '../utils/BrowserHistory'
+// import { handle } from '../Action/Registeraction'
+// import { success } from '../'
+import { signup } from  './userFunction';
 
-class LoginForm extends Component {
-    constructor() {
-        super();
-        this.state = {
-          fields: {},
-          errors: {}
-        }
-  
-        this.handleChange = this.handleChange.bind(this);
-        this.submituserRegistrationForm = this.submituserRegistrationForm.bind(this);
-  
-      };
-  
-      handleChange(e) {
-        let fields = this.state.fields;
-        fields[e.target.name] = e.target.value;
-        this.setState({
-          fields
-        });
-  
-      }
-  
-      submituserRegistrationForm(e) {
-        e.preventDefault();
-        if (this.validateForm()) {
-            let fields = {};
-            fields["Firstname"] = "";
-          fields["Lastname"] = "";
-          fields["password"] = "";
-          fields["emailid"] = "";
-          fields["mobileno"] = "";
-          fields["password"] = "";
-            this.setState({fields:fields});
-            alert("Form submitted");
-        }
-  
-      }
-  
-      validateForm() {
-  
-        let fields = this.state.fields;
-        let errors = {};
-        let formIsValid = true;
-  
-      
-                if (!fields["password"]) {
-                  formIsValid = false;
-                  errors["password"] = "*Please enter your password.";
-                }
-          
-                if (typeof fields["password"] !== "undefined") {
-                  if (!fields["password"].match(/^.*(?=.{8,}).*$/)) {
-                    formIsValid = false;
-                    errors["password"] = "*Please enter secure and strong password.";
-                  }
-                }
-          
-          
-               
-          
-                if (!fields["mobileno"]) {
-                  formIsValid = false;
-                  errors["mobileno"] = "*Please enter your mobile no.";
-                }
-          
-                if (typeof fields["mobileno"] !== "undefined") {
-                  if (!fields["mobileno"].match(/^[0-9]{10}$/)) {
-                    formIsValid = false;
-                    errors["mobileno"] = "*Please enter valid mobile no.";
-                  }
-                }
-        this.setState({
-          errors: errors
-        });
-        return formIsValid;
-  
-  
-      }
+class Registrationfrom extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
      
-  
-  
-    render() {
-      return (
-      <div id="main-registration-container">
-       <div id="register"> 
-       <img src={logo} className="imgi" />
-       <h3>Login Form</h3>
      
-        
-          <form method="post"  name="userRegistrationForm"  onSubmit= {this.submituserRegistrationForm} >
-        
-         <label>Mobile No:</label>
-         <input type="number" name="mobileno" value={this.state.fields.mobileno} onChange={this.handleChange}   />
-         <div className="errorMsg">{this.state.errors.mobileno}</div>
-         <label>Password</label>
-        <input type="password" name="password" value={this.state.fields.password} onChange={this.handleChange} />
-        <div className="errorMsg">{this.state.errors.password}</div>
-         <button type="submit" className="button"  value="Register">Login</button>
-         </form>
-         <Navbar/>
-         <Footer/>
-      </div>
-  </div>
-  
-        );
+      password: '',
+    
+      Mobnum: '',
+     
+      perr: '',
+     
+      phnerr: ''
+
+
+    };
+  }
+  onHandleChange = (event) => {
+
+    this.setState({ [event.target.name]: event.target.value });
+
+  }
+  onHandleClicks = (e) => {
+   
+        BrowserHistory.push('/login'); 
+
+  }
+  onHandleClicksCancel = (e) => {
+   
+    BrowserHistory.push('/'); 
+
+}
+
+
+  onHandleClick = (e) => {
+    debugger;
+    e.preventDefault();
+    const reqst = {
+      Firstname: this.state.Firstname,
+      Lastname: this.state.Lastname,
+      email: this.state.email,
+      password: this.state.password,
+      Confirmpassword: this.state.Confirmpassword,
+      Mobnum: this.state.Mobnum
+
+    }
+    signup(reqst).then(res => {
+      // if (res.data === "User Created Succesfully") {
+      //   alert("UserCreated Successfully")
+      //   BrowserHistory.push('/login')
+      // }
+
+    })
+
+    if ( this.state.password.length === 0 && this.state.Mobnum.length === 0) {
+      this.setState({
+       
+        perr: "Password is required",
+       
+        phnerr: "Phonumber is required"
+
+      })
     }
   
+    else if (this.state.password.length === 0) {
+      this.setState({ perr: "Password is required" })
+    }
+    
+    else if (this.state.Mobnum.length === 0) {
+      this.setState({ phnerr: "Password is required" })
+    }
+
   
+    else if (!this.state.password.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
+      this.setState({ perr: "Please enter the valid password" })
+    }
+  
+    else if (!this.state.Mobnum.match(/^[0-9]{10}$/)) {
+      this.setState({ phnerr: "Please enter the valid number" })
+    }
+
+    else {
+      BrowserHistory.push('/login')
+      // this.Loginaction.props.success("Register Successfully")
+    }
   }
 
-export default LoginForm;
+
+  render() {
+    return (
+      <div className="register">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4"></div>
+            <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4 frm">
+              <h1>Signup</h1>
+
+          
+             
+
+            
+              <label ><b>Password</b></label><br />
+              <input type="password" name="password" className="one" onChange={this.onHandleChange} /><br /><br />
+              <p >{this.state.perr}</p>
+             
+              <label ><b>Mobilenumber</b></label><br />
+              <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} /><br /><br />
+            
+              <p >{this.state.phnerr}</p>
+              <button onClick={this.onHandleClick} className="btn1"><b>Login</b></button><a href="" onClick={this.onHandleClicksCancel}>Cancel</a>
+            </div>
+            <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+// const mapStoreToProps = (state) => {
+//   const { message } = state.Registerreducer;
+
+
+//   return { message };
+
+export default Registrationfrom;

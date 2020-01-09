@@ -7,8 +7,12 @@
    color: paleturquoise;
    display: grid;
    grid-template-columns:200px 830px 250px ;
-  margin-left: -30px;;
+  /* margin-left: -30px; */
+  /* position: fixed; */
+  bottom: 0%;
+  margin-top: 50px;;
 }
 .down{
   margin-top:15px;
+  /* margin-top:50px ; */
 }
