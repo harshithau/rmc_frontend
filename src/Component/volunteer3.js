@@ -7,7 +7,7 @@ import Footer from './Footer';
 // import Admin from './Admin';
 
 
- class volunteer1 extends Component {
+ class volunteer3 extends Component {
     constructor(props) {
         super(props);
         this.state = { todos: [], text: '' };
@@ -64,7 +64,7 @@ import Footer from './Footer';
         );
     }
 }
-export default volunteer1;
+export default volunteer3;
 
 
   

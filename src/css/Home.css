@@ -1,15 +1,21 @@
-
-.para{
-    background-image:url('../image/background.png') ;
-    color:black;
-    margin: 150px;
-    padding: 30px;
-    padding-top: -20px;
-    /* margin-top: -20px; */
+.home_Page_down{
+    display: grid;
+    grid-template-columns: 400px 500px 450px;
+    z-index: 1;
 }
-.frontimg{
-    height: 90px;
-    width:90px;
-    border-radius: 50px;
-}
+.home_down_img{
+    width:200px;height: 200px;
+    border-radius: 50%;
 
+}
+.home_paddy_img{
+    width:100%;
+    height: 400px;;
+    
+}
+h2{
+    margin-top: -150px;;color:black
+;}
+.slide-container{
+ margin:100px;
+}

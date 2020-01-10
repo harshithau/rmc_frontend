@@ -5,6 +5,8 @@ import BrowserHistory from '../utils/BrowserHistory'
 // import { handle } from '../Action/Registeraction'
 // import { success } from '../'
 import { signup } from  './userFunction';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 class Registrationfrom extends Component {
   constructor(props) {
@@ -35,7 +37,7 @@ class Registrationfrom extends Component {
   }
   onHandleClicksCancel = (e) => {
    
-    BrowserHistory.push('/'); 
+    BrowserHistory.push('/LoginForm'); 
 
 }
 
@@ -88,7 +90,7 @@ class Registrationfrom extends Component {
     }
 
     else {
-      BrowserHistory.push('/login')
+      BrowserHistory.push('/LoginForm')
       // this.Loginaction.props.success("Register Successfully")
     }
   }
@@ -121,6 +123,8 @@ class Registrationfrom extends Component {
             </div>
           </div>
         </div>
+        <Navbar/>
+        <Footer/>
       </div>
     );
   }

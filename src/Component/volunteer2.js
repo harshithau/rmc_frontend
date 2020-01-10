@@ -7,7 +7,7 @@ import Footer from './Footer';
 // import Admin from './Admin';
 
 
- class volunteer1 extends Component {
+ class volunteer2 extends Component {
     constructor(props) {
         super(props);
         this.state = { todos: [], text: '' };
@@ -28,8 +28,8 @@ import Footer from './Footer';
             <div>
             <div className="volunteer1">
                 <div >
-               <div> NAME:Yashu.<br/></div>
-                <div className="product">Email_id:yashusgowda@gmail.com</div>
+               <div> NAME:Bindu.<br/></div>
+                <div className="product">Email_id:Bindusgowda@gmail.com</div>
                 <ul>
                    <li>
                     tomoto
@@ -64,7 +64,7 @@ import Footer from './Footer';
         );
     }
 }
-export default volunteer1;
+export default volunteer2;
 
 
   

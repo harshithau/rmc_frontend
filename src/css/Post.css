@@ -1,4 +1,4 @@
-.all_post_heading {
+/* .all_post_heading {
     text-align:center;
     font-weight:400;
     font-size:40px;
@@ -72,13 +72,13 @@
         font-family: 'Work Sans,',sans-serif;
         box-shadow: 0 2px 2px 0 rgba(46, 60, 73, 0.05);
         outline:none;
-        }
+        } */
         
         
         /* All Posts */
         
         
-        .all_post_heading {
+        /* .all_post_heading {
         text-align:center;
         font-weight:400;
         font-size:40px;
@@ -157,7 +157,7 @@
         outline: none;
         color:#fff;
         }
-        view rawindex.css hosted with ❤ by GitHub
+
     .form button {
         background:#02b3e4;
         padding:15px 40px;
@@ -218,4 +218,13 @@
     outline: none;
     color:#fff;
     }
-    
+     */
+     .search{
+         margin-left:-400px;;
+     }
+     table {
+        display: grid;
+        grid-template-columns: 600px;
+        margin-top: 90px;
+        grid-gap: 09px;
+     }

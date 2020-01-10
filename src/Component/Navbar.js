@@ -20,17 +20,17 @@ class Navbar extends Component {
   render() {
       return (
         <div >
-          <nav className="nav">
+          <nav className="navbar">
         <img src={profile} className="navlogo"/>
         <a className="heading">Online Rmc Service</a>
         <a className="home"  onClick={this.onHome}>Home</a>
         <div class="dropdown">
-    <button class="dropbtn">RMC Details
-      <i class="fa fa-caret-down"></i>
+    <button class="dropbtn ">RMC Details
+
     </button>
     <div class="dropdown-content">
       <a  onClick={this.onUser}>USER</a>
-      <a href="#">Link</a>
+    
       
     </div>
   </div> 

@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../css/Register.css';
 import BrowserHistory from '../utils/BrowserHistory'
-// import { handle } from '../Action/Registeraction'
-// import { success } from '../'
-import { signup } from  './userFunction';
 
-class Registrationfrom extends Component {
+import Navbar from './Navbar';
+import Footer from './Footer';
+import {registerHandle} from '../Action/signupAction';
+
+
+class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,12 +35,12 @@ class Registrationfrom extends Component {
   }
   onHandleClicks = (e) => {
    
-        BrowserHistory.push('/login'); 
+        BrowserHistory.push('/LoginForm'); 
 
   }
   onHandleClicksCancel = (e) => {
    
-    BrowserHistory.push('/'); 
+    BrowserHistory.push('/LoginForm'); 
 
 }
 
@@ -46,7 +48,7 @@ class Registrationfrom extends Component {
   onHandleClick = (e) => {
     debugger;
     e.preventDefault();
-    const reqst = {
+    const payload = {
       Firstname: this.state.Firstname,
       Lastname: this.state.Lastname,
       email: this.state.email,
@@ -55,13 +57,13 @@ class Registrationfrom extends Component {
       Mobnum: this.state.Mobnum
 
     }
-    signup(reqst).then(res => {
+    // signup(reqst).then(res => {
       // if (res.data === "User Created Succesfully") {
       //   alert("UserCreated Successfully")
       //   BrowserHistory.push('/login')
       // }
 
-    })
+    // })
 
     if (this.state.Firstname.length === 0 && this.state.Lastname.length === 0 && this.state.email.length === 0 && this.state.password.length === 0 && this.state.Confirmpassword.length === 0 && this.state.Mobnum.length === 0) {
       this.setState({
@@ -113,9 +115,21 @@ class Registrationfrom extends Component {
     }
 
     else {
-      BrowserHistory.push('/login')
-      // this.Loginaction.props.success("Register Successfully")
+      BrowserHistory.push('/LoginForm')
+      this.Loginaction.props.success("Register Successfully")
     }
+    this.props.registerHandle(payload);
+    // BrowserHistory.push('/login')
+//     const url = "http://localhost:4013/Signup"
+//   return axios({
+//   method: 'POST',
+//   url,
+//   data: reqst
+// }).then(async (res) => {
+//   console.log(res);
+//   BrowserHistory.push('/login')
+// })
+
   }
 
 
@@ -155,14 +169,15 @@ class Registrationfrom extends Component {
             </div>
           </div>
         </div>
+       <Navbar/>
+       <Footer/>
       </div>
     );
   }
 }
-// const mapStoreToProps = (state) => {
-//   const { message } = state.Registerreducer;
+const mapStateToProps=(state)=>{
+  const {Firstname,Lastname,email,password,Confirmpassword,Mobnum }=state.RegisterReducer
+  return {Firstname,Lastname,email,password,Confirmpassword,Mobnum }
+}
+export default connect(mapStateToProps,{registerHandle})  (Register);
 
-
-//   return { message };
-
-export default Registrationfrom;
