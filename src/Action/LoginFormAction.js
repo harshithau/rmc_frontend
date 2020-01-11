@@ -1,24 +1,19 @@
-const SET_LOGIN_PENDING = 'SET_LOGIN_PENDING';
-const SET_LOGIN_SUCCESS = 'SET_LOGIN_SUCCESS';
-const SET_LOGIN_ERROR = 'SET_LOGIN_ERROR';
+import axios from 'axios'
+export function loginHandle(payload){
+    debugger
+const options = {
+url: 'http://localhost:4013/Signup',
+method: 'POST',
 
-function setLoginPending(isLoginPending) {
-  return {
-    type: SET_LOGIN_PENDING,
-    isLoginPending
-  };
+data: payload
+};
+
+return function(dispatch)
+{
+axios(options)
+.then(response => {
+console.log(response.status);
+});
+dispatch({type:'LOGIN',payload:payload});
 }
-
-function setLoginSuccess(isLoginSuccess) {
-  return {
-    type: SET_LOGIN_SUCCESS,
-    isLoginSuccess
-  };
-}
-
-function setLoginError(loginError) {
-  return {
-    type: SET_LOGIN_ERROR,
-    loginError
-  }
 }

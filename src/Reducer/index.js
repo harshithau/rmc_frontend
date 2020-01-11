@@ -1,8 +1,10 @@
 import RegisterReducer from './RegisterReducer'
 import { combineReducers } from 'redux';
-import postReducer from './postReducer';
+import  LoginFormReducer from  './LoginFormReducer';
+import Admin_reducer from './Admin_reducer';
 
 export default combineReducers({
     RegisterReducer,
-    postReducer
+    Admin_reducer,
+    LoginFormReducer
 })

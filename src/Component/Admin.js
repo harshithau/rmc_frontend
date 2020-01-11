@@ -10,6 +10,7 @@ import PostForm from './PostForm';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import market3 from '../image/rmc4.jpg';
+import Admin_page from './Admin_page';
 
 
 
@@ -66,7 +67,7 @@ class Admin extends Component {
                       <div className="top">Maddur</div>
                             <Card.Img variant="top" src={market3}/>
                             <Card.Body>
-                                <Card.Title>Orphans</Card.Title>
+                              
                                 <Card.Text>
                                 B M ROAD, CG DODDI, MADDUR, MANDYA DIST 571428
                                 </Card.Text>
@@ -77,13 +78,35 @@ class Admin extends Component {
                         </Card>
                         
             </div>
+            </div  >
+            <div>
+            <div className=" Volunteers_container">
+          <div><h4> Volunteers</h4> 
+         <ul>
+             <li>
+                 Divya
+             </li>
+             <li>
+                 Bindu
+             </li>
+             <li>
+                 Vasu
+             </li>
+             <li>
+                 yashu
+             </li>
+         </ul>
+         
+         </div>
+            <Admin_page/>
+         </div>
+        
             
-            </div>
-            <AllPost/>
-            <PostForm/>
             <Navbar/>
             <Footer/>
          </div>
+         </div>
+
         );
     }
 }

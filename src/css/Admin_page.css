@@ -1,0 +1,65 @@
+.credentials{
+    margin-bottom: 33px;
+    color: green;
+    font-weight: bold;
+}
+.textfield{
+    margin-top: 40px;
+    background: transparent;
+    height: 135px;
+    width: 340px;
+    border: 1px rgb(110, 91, 91) solid;
+}
+.donateleftpara{
+    margin: 20px;
+    font-size: 15px;
+    color: rgba(245, 227, 224, 0.616);
+}
+.donateoptions{
+    background: transparent;
+   
+    width: 340px;
+}
+/* .donatebg{
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+
+.inputtran{
+    background: transparent;
+   
+    border: 1px rgb(110, 91, 91) solid;
+    width: 340px;
+    padding:06px;
+}
+::placeholder{
+    color: black;
+}
+.donatebtn{
+    margin:10px;
+    background: rgb(240, 4, 102);
+}
+/* .inputdonation{ */
+    /* background: transparent; */
+    /* color: whitesmoke; */
+    /* border: 1px rgb(110, 91, 91) solid; */
+    /* width: 260px; */
+/* } */
+.rupees{
+    height:28px ;
+    border: 1px rgb(110, 91, 91) solid;
+    background: transparent;
+    color: rgb(214, 16, 16);
+}
+h6{
+    font-size: 20px;;
+    margin-top: 31px;
+}
+
+.Diff_product{
+    margin-top: -20px;;
+}
+.option_product{
+    margin-top: -7px;
+}

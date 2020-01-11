@@ -29,8 +29,8 @@ function App() {
       <Route exact path='/Home' component={Home}></Route> 
       <Route exact path='/User' component={User}></Route> 
       <Route exact path='/Admin' component={Admin}></Route> 
-      <Route exact path='/AllPost' component={AllPost}></Route> 
-       <Route exact path='/AllPost' component={PostForm}></Route> 
+      {/* <Route exact path='/AllPost' component={AllPost}></Route> 
+       <Route exact path='/AllPost' component={PostForm}></Route>  */}
        <Route exact path='/volunteer1' component={volunteer1}></Route>
     
         </switch>

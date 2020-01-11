@@ -10,8 +10,8 @@ import { Fade } from 'react-slideshow-image';
 // import Navbar from '../Component/Navbar;
 // import Footer from '../Component/Footer';
 import home1 from  '../image/home1.jpeg';
-import home2 from  '../image/home2.jpeg';
-import home3 from  '../image/home3.jpeg';
+import home2 from  '../image/home2.png';
+import home3 from  '../image/backimg.webp';
 
 
 
