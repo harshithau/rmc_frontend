@@ -1,22 +1,35 @@
 const initialState={
-    Firstname:'',
-    Lastname:'',
-    email:'',
-    product:''
+    volunteerName:'',
+    marketId:'',
+    volunteersId:'',
+    productName:'',
+        productWeight:'',
+        Amount:''
+
     }
     export default(state = initialState,action)=>{
     // debugger
     switch(action.type){
-    case "ADMIN":{
+    case "VOLUNTEER":{
     return{...state,
-    Firstname:action.payload.Firstname,
-    Lastname:action.payload.Lastname,
-    email:action.payload.email,
-    product:action.payload.product,
+    volunteerName:action.payload.volunteerName,
+    marketId:action.payload.marketId,
+   
    
     }
     }
+    case "PRODUCTS":{
+        return{...state,
+            volunteersId:action.payload1.volunteersId,
+            productName:action.payload1.productName,
+            productWeight:action.payload1.productWeight,
+            Amount:action.payload1.Amount,
+       
+       
+        }
+        }
     default:
     return state;
     }
     }
+   

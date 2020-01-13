@@ -9,10 +9,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './Component/Home';
 import User from './Component/User';
 import Admin from './Component/Admin';
-import AllPost from './Component/AllPost';
-import PostForm from './Component/PostForm'
+import volunteer1 from './Component/volunteer1';
+// import AllPost from './Component/AllPost';
+// import PostForm from './Component/PostForm'
 // import Yashu from './Component/Yashu';
-import volunteer1 from './Component/volunteer1'
+// import volunteer1 from './Component/volunteer1'
 
 function App() {
   return (

@@ -37,19 +37,19 @@ class Home extends Component {
                   <div className="image-container">
                     <img className="home_paddy_img" src={logo} />
                   </div>
-                  <h2>Vegetables are important sources of many nutrients, including potassium, <br/>dietary fiber, folate (folic acid), vitamin A, and vitamin C.</h2>
+                
                 </div>
                 <div className="each-fade">
                   <div className="image-container">
                     <img className="home_paddy_img" src={slid2} />
                   </div>
-                  <h2>All vegetables contain healthful vitamins, minerals, and fiber.</h2>
+                 
                 </div>
                 <div className="each-fade">
                   <div className="image-container">
                     <img className="home_paddy_img" src={slid3} />
                   </div>
-                  <h2>Eating plenty of vegetables is one of the easiest ways for people to improve <br/>their health and well-being..</h2>
+                 
                 </div>
                
               </Fade>
@@ -63,6 +63,15 @@ class Home extends Component {
                 </div>
                 <div>
                 <img className="home_down_img" src={home3} />
+                </div>
+                <div>
+                  Vegetables are parts of plants that are consumed<br></br> by humans or other animals as food
+                </div>
+                <div>
+                  Vegetables are parts of plants that are consumed<br></br>by humans or other animals as food
+                </div>
+                <div>
+                  Vegetables are parts of plants that are consumed <br/>by humans or other animals as food
                 </div>
               </div>
               <Navbar/>

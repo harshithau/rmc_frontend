@@ -39,11 +39,21 @@ grid-template-columns: auto auto auto;
 }
 .volentainers{
   border-radius: 50px;
-  color:red;
+  
 }
-
 
 .Volunteers_container{
   display: grid ;
   grid-template-columns: auto auto;
+}
+.market_detail{
+
+ color:black;
+}
+h4{
+  font-size: 20px;
+  color:blueviolet;
+}
+.top{
+  margin-top:98px;
 }

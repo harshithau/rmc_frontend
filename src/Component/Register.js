@@ -142,6 +142,7 @@ class Register extends Component {
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4 frm">
               <h1>Signup</h1>
           <div className="regcont">
+            {/* <h3>signup here</h3> */}
               <div><label ><b>First Name</b></label><br /></div>
               <div><input type="text" name="Firstname" className="one" onChange={this.onHandleChange} /><br /></div>
               <div><p >{this.state.ferr}</p></div>
@@ -160,9 +161,10 @@ class Register extends Component {
               <div> <p >{this.state.cperr}</p></div>
               <div> <label ><b>Mobilenumber</b></label><br /></div>
               <div> <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} /><br /><br /></div>
-              </div>
-              <a href="" onClick={this.onHandleClicks}>you have already account</a>
               <p >{this.state.phnerr}</p>
+              </div>
+                <div><a href="" onClick={this.onHandleClicks}>you have already account</a></div>
+            
               <button onClick={this.onHandleClick} className="btn1"><b>Register</b></button><a href="" onClick={this.onHandleClicksCancel}>Cancel</a>
             </div>
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4">
