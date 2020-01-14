@@ -13,3 +13,43 @@
 .TodoList{
  margin-left: -41px;
 }
+
+.register_volunteers{
+ background-color:#7fd2b6;
+ margin-top: 70px;;
+
+}
+.cellspaceing{
+    margin-left:140px;
+}
+.product_heading1{
+ 
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.product_heading{
+    margin-left: 20px;;
+}
+.product_heading2{
+    margin-left: 300px;
+}
+.product_heading3{
+    margin-left: 300px;
+}
+.product_card{
+    
+    display: grid;
+    grid-template-columns: 185px 387px 300px;
+}
+.product_card1{
+    margin-left: 20px;}
+.product_card2{
+    margin-left: 300px;
+}
+.product_card3{
+    margin-left: 300px;  
+}
+.main_container_table{
+    background-color:#7fd2b6;
+}
+

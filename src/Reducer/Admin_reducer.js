@@ -3,8 +3,8 @@ const initialState={
     marketId:'',
     volunteersId:'',
     productName:'',
-        productWeight:'',
-        Amount:''
+    productWeight:'',
+    Amount:''
 
     }
     export default(state = initialState,action)=>{

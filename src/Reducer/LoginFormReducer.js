@@ -1,9 +1,5 @@
 const initialState={
-  Firstname:'',
-  Lastname:'',
-  email:'',
   password:'',
-  Confirmpassword:'',
   Mobnum:''
 }
 

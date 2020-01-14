@@ -150,3 +150,40 @@ componentDidMount=()=>{
 
 export default Admin;
 
+
+
+
+
+
+class user_only extends Component {
+    render() {
+       {this.state.data.map(name => {
+        if (name.productName === "Onion") {
+            return (
+                <div>
+                    <table>
+                        <tr>
+                            <div className="product_card" >
+                              <img src={logo}/>
+                            <div className="product_card1"><td>{name.productName}</td></div>
+                            <div className="product_card2"><td>{name.productWeight}</td></div>
+                            <div className="product_card3"><td>{name.Amount}</td></div>
+                            </div>
+                        </tr>
+                    </table><br></br>
+
+                </div>
+
+
+
+                            );
+
+                        }
+                    }
+       )
+                }
+            }
+        }
+            
+
+export default user_only;

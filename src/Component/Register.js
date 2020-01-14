@@ -114,10 +114,10 @@ class Register extends Component {
       this.setState({ phnerr: "Please enter the valid number" })
     }
 
-    else {
-      BrowserHistory.push('/LoginForm')
-      this.Loginaction.props.success("Register Successfully")
-    }
+    // else {
+    //   BrowserHistory.push('/LoginForm')
+    //   this.Loginaction.props.success("Register Successfully")
+    // }
     this.props.registerHandle(payload);
     // BrowserHistory.push('/login')
 //     const url = "http://localhost:4013/Signup"

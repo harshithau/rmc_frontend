@@ -3,14 +3,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../css/Register.css';
 import '../css/Login.css';
-import BrowserHistory from '../utils/BrowserHistory'
-
+import BrowserHistory from '../utils/BrowserHistory';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import {registerHandle} from '../Action/signupAction';
+import {loginHandle} from '../Action/LoginFormAction';
 
 
-class Register extends Component {
+class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,35 +26,15 @@ class Register extends Component {
     this.setState({ [event.target.name]: event.target.value });
 
   }
-  onHandleClicks = (e) => {
-   
-        BrowserHistory.push('/LoginForm'); 
-
-  }
-  onHandleClicksCancel = (e) => {
-   
-    BrowserHistory.push('/LoginForm'); 
-
-}
-
 
   onHandleClick = (e) => {
     debugger;
     e.preventDefault();
     const payload = {
-      
       password: this.state.password,
-      
       Mobnum: this.state.Mobnum
 
     }
-    // signup(reqst).then(res => {
-      // if (res.data === "User Created Succesfully") {
-      //   alert("UserCreated Successfully")
-      //   BrowserHistory.push('/login')
-      // }
-
-    // })
 
     if ( this.state.password.length === 0 && this.state.Mobnum.length === 0) {
       this.setState({
@@ -82,23 +61,7 @@ class Register extends Component {
     else if (!this.state.Mobnum.match(/^[0-9]{10}$/)) {
       this.setState({ phnerr: "Please enter the valid number" })
     }
-
-    else {
-      BrowserHistory.push('/LoginForm')
-      this.Loginaction.props.success("Register Successfully")
-    }
-    this.props.registerHandle(payload);
-    // BrowserHistory.push('/login')
-//     const url = "http://localhost:4013/Signup"
-//   return axios({
-//   method: 'POST',
-//   url,
-//   data: reqst
-// }).then(async (res) => {
-//   console.log(res);
-//   BrowserHistory.push('/login')
-// })
-
+    this.props.loginHandle(payload);
   }
 
 
@@ -121,7 +84,6 @@ class Register extends Component {
               <div> <label ><b>Mobilenumber</b></label><br /></div>
               <div> <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} /><br /><br /></div>
               </div>
-              {/* <a href="" onClick={this.onHandleClicks}>you have already account</a> */}
               <p >{this.state.phnerr}</p>
               <button onClick={this.onHandleClick} className="btn1"><b>Login</b></button><a href="" onClick={this.onHandleClicksCancel}>Cancel</a>
             </div>
@@ -139,5 +101,5 @@ const mapStateToProps=(state)=>{
   const {password,Mobnum }=state.RegisterReducer
   return {password,Mobnum }
 }
-export default connect(mapStateToProps,{registerHandle})  (Register);
+export default connect(mapStateToProps,{loginHandle})  (LoginForm);
 

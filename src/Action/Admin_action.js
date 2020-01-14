@@ -6,10 +6,6 @@ export function volunteersHandle(payload){
 const options = {
 url: 'http://localhost:4013/volunteer',
 method: 'POST',
-// headers: {
-// 'Accept': 'application/json',
-// 'Content-Type': 'application/json;charset=UTF-8'
-// },
 data: payload
 };
 
@@ -30,10 +26,6 @@ export function productsDetails(payload1){
 const options = {
 url: 'http://localhost:4013/products',
 method: 'POST',
-// headers: {
-// 'Accept': 'application/json',
-// 'Content-Type': 'application/json;charset=UTF-8'
-// },
 data: payload1
 };
 
