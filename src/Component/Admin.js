@@ -20,7 +20,10 @@ import { withRouter } from 'react-router-dom';
 class Admin extends Component {
   state={
     data:[]
-}
+  }
+
+
+ 
 componentDidMount=()=>{
   debugger;
     axios.get('http://localhost:4013/getallVolunteers')
@@ -29,61 +32,56 @@ componentDidMount=()=>{
         console.log(res)
     });
 }
+
  render() {
-      return (
-      <div>
+  return (
+    <div>
       <div className="grid">
-                <div>
-                  <Card className=" mainheight li" >
-                  <div className="top">Mandya Market</div>
-                <Card.Img variant="top" src={flood} />
-                  <Card.Body>
-
-                <Card.Text className="market_detail">
-                <div> M.C.ROAD,V.V.NAGAR, KALLAHALLI, MANDYA 571401</div>
-                </Card.Text>
-
-
-                </Card.Body>
-
-                </Card>
-
-
-                </div>
-                <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <Card className="mainheight li" >
-                <div className="top">K R market Banglure</div>
-                <Card.Img variant="top" src={rmc1}/>
-                <Card.Body>
-                <Card.Text className="market_detail">
-                K. R. Market (Krishna Rajendra Market), also known as 
-                City Market, is the largest wholesale market dealing with commodities 
-                in Bangalore,
+        <div>
+          <Card className=" mainheight li" >
+            <div className="top">Mandya Market</div>
+            <Card.Img variant="top" src={flood} />
+            <Card.Body>
+            <Card.Text className="market_detail">
+            <div> M.C.ROAD,V.V.NAGAR, KALLAHALLI, MANDYA 571401</div>
+            </Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
+        <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <Card className="mainheight li" >
+            <div className="top">K R market Banglure</div>
+            <Card.Img variant="top" src={rmc1}/>
+            <Card.Body>
+            <Card.Text className="market_detail">
+            K. R. Market (Krishna Rajendra Market), also known as 
+            City Market, is the largest wholesale market dealing with commodities 
+            in Bangalore,
+            </Card.Text>
+            </Card.Body>
+          </Card>
+          </div>
+            <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div className="top">Mysore market</div>
+            <Card className="mainheight li" >
+            <Card.Img  variant="top" src={market2} />
+            <Card.Body>
+            <Card.Text className="market_detail">
+            APMC Nanjangud Road Bandipalya Mysore 570025
+            </Card.Text>
+            </Card.Body>
+            </Card>
+          </div>
+            <div>
+              <Card className=" mainheight li" >
+              <div className="top">Maddur</div>
+              <Card.Img variant="top" src={market3}/>
+              <Card.Body>
+              <Card.Text className="market_detail">
+              B M ROAD, CG DODDI, MADDUR, MANDYA DIST 571428
               </Card.Text>
               </Card.Body>
-                </Card>
-                </div>
-                <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div className="top">Mysore market</div>
-                <Card className="mainheight li" >
-                <Card.Img  variant="top" src={market2} />
-                <Card.Body>
-                <Card.Text className="market_detail">
-                APMC Nanjangud Road Bandipalya Mysore 570025
-                </Card.Text>
-                </Card.Body>
-                </Card>
-                </div>
-                <div>
-                <Card className=" mainheight li" >
-                <div className="top">Maddur</div>
-                <Card.Img variant="top" src={market3}/>
-                <Card.Body>
-                <Card.Text className="market_detail">
-                B M ROAD, CG DODDI, MADDUR, MANDYA DIST 571428
-                </Card.Text>
-                </Card.Body>
-                </Card>
+              </Card>
             </div>
         </div>
         <div>
@@ -93,7 +91,7 @@ componentDidMount=()=>{
           if(name.marketId === "5e1c41dd925b504489f66761")
               {
                 return(
-                  <a href='/voluneteer1'>{name.volunteerName}</a>
+                  <a href='/volunteer1'>{name.volunteerName}</a>
                 )
               }
             }
@@ -103,7 +101,7 @@ componentDidMount=()=>{
         if(name.marketId === "5e1c41cf925b504489f66760")
         {
           return(
-            <a href='/voluneteer2'>{name.volunteerName}</a>
+            <a href='/volunteer2'>{name.volunteerName}</a>
           )
         }
       }
@@ -113,7 +111,7 @@ componentDidMount=()=>{
     if(name.marketId === "5e1c41f3925b504489f66762")
     {
       return(
-        <a href='/voluneteer3'>{name.volunteerName}</a>
+        <a href='/volunteer3'>{name.volunteerName}</a>
         )
       }
     }

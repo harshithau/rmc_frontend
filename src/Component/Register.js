@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../css/Register.css';
-import BrowserHistory from '../utils/BrowserHistory'
-
+import BrowserHistory from '../utils/BrowserHistory';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import {registerHandle} from '../Action/signupAction';
@@ -57,15 +56,7 @@ class Register extends Component {
       Mobnum: this.state.Mobnum
 
     }
-    // signup(reqst).then(res => {
-      // if (res.data === "User Created Succesfully") {
-      //   alert("UserCreated Successfully")
-      //   BrowserHistory.push('/login')
-      // }
-
-    // })
-
-    if (this.state.Firstname.length === 0 && this.state.Lastname.length === 0 && this.state.email.length === 0 && this.state.password.length === 0 && this.state.Confirmpassword.length === 0 && this.state.Mobnum.length === 0) {
+  if (this.state.Firstname.length === 0 && this.state.Lastname.length === 0 && this.state.email.length === 0 && this.state.password.length === 0 && this.state.Confirmpassword.length === 0 && this.state.Mobnum.length === 0) {
       this.setState({
         ferr: "Firstname is required", 
         lerr: "Lastname is required",
@@ -113,26 +104,8 @@ class Register extends Component {
     else if (!this.state.Mobnum.match(/^[0-9]{10}$/)) {
       this.setState({ phnerr: "Please enter the valid number" })
     }
-
-    // else {
-    //   BrowserHistory.push('/LoginForm')
-    //   this.Loginaction.props.success("Register Successfully")
-    // }
     this.props.registerHandle(payload);
-    // BrowserHistory.push('/login')
-//     const url = "http://localhost:4013/Signup"
-//   return axios({
-//   method: 'POST',
-//   url,
-//   data: reqst
-// }).then(async (res) => {
-//   console.log(res);
-//   BrowserHistory.push('/login')
-// })
-
-  }
-
-
+   }
   render() {
     return (
       <div className="register">
@@ -141,15 +114,13 @@ class Register extends Component {
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4"></div>
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4 frm">
               <h1>Signup</h1>
-          <div className="regcont">
-            {/* <h3>signup here</h3> */}
+          <div className="regcontnt">
               <div><label ><b>First Name</b></label><br /></div>
               <div><input type="text" name="Firstname" className="one" onChange={this.onHandleChange} /><br /></div>
               <div><p >{this.state.ferr}</p></div>
               <div><label><b>Last Name</b></label><br /></div>
               <div><input type="text" name="Lastname" className="one" onChange={this.onHandleChange} /><br /></div>
               <div> <p >{this.state.lerr}</p></div>
-
               <div><label ><b>Email</b></label><br /></div>
               <div> <input type="text" name="email" className="one" onChange={this.onHandleChange} /><br /></div>
               <div> <p >{this.state.uerr}</p></div>
@@ -159,12 +130,11 @@ class Register extends Component {
               <div> <label ><b>Confirmpassword</b></label><br /></div>
               <div> <input type="password" name="Confirmpassword" className="one" onChange={this.onHandleChange} /><br /><br /></div>
               <div> <p >{this.state.cperr}</p></div>
-              <div> <label ><b>Mobilenumber</b></label><br /></div>
+              <div> <label ><b>Mobile Number</b></label><br /></div>
               <div> <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} /><br /><br /></div>
               <p >{this.state.phnerr}</p>
               </div>
-                <div><a href="" onClick={this.onHandleClicks}>you have already account</a></div>
-            
+              <div><div href="" onClick={this.onHandleClicks} className="next_login">you have already account</div></div>
               <button onClick={this.onHandleClick} className="btn1"><b>Register</b></button><a href="" onClick={this.onHandleClicksCancel}>Cancel</a>
             </div>
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4">

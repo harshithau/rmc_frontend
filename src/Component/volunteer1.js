@@ -33,103 +33,71 @@ class Volunteer1 extends Component {
         debugger;
         const { volunteersId, productName, productWeight, Amount } = this.state
         const payload1 = { volunteersId, productName, productWeight, Amount }
-
-
-
         let t = 0;
         if (!this.state.volunteersId) this.setState({ volunteeridError: 'Firstname is required' });
-
-
         if (!this.state.productName) this.setState({ productnameError: 'productname is required' });
-
-
         if (!this.state.productWeight) this.setState({ productWeightError: 'productWeight is required' });
-
-
-
         if (!this.state.Amount) this.setState({ AmountError: 'Amount is required' });
-
-
         this.props.productsDetails(payload1);
-
-    }
+}
 
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
-
-
-    render() {
+    render() {      
         return (
             <div>
-
                 <div className="register_volunteers">
                     <form className="Volunteers_form">
                         <div className="Volunteer_Details">Volunteer Details</div><br></br>
                         <input type='text' name='volunteersId' onChange={this.handleChange} className='inputtran input_box' placeholder='Enter Volunteer Id'></input>
                         <p className='red'>{this.state.volunteeridError}</p>
-
-                        <input type='text' name='productName' onChange={this.handleChange} className='inputtran input_box' placeholder='Enter product name'></input>
+                      <input type='text' name='productName' onChange={this.handleChange} className='inputtran input_box' placeholder='Enter product name'></input>
                         <p className='red'>{this.state.productnameError}</p>
-
                         <input type='text' name='productWeight' onChange={this.handleChange} className='inputtran input_box' placeholder='Enter product Weight'></input>
                         <p className='red'>{this.state.productWeightError}</p>
                         <input type="number" name="Amount" onChange={this.handleChange} className="inputtran input_box  " placeholder="enter  amount"></input>
                         <p className='red'>{this.state.AmountError}</p>
-
-
-
                         <button type="button" onClick={this.handleSubmit} class="donatebtn btn btn-success signup_btn">Add</button>
                         <button class="donatebtn btn btn-success signup_btn" color="danger" onClick={this.toggle}>Cancel</button>
-
-
-
-
                     </form>
                 </div>
-                <div>
-
+        <div>
         <div className="main_container_table">
-                    <div>
-                        <table >
-                            <tr>
-                              <div className="product_heading1">
-                                <div className="product_heading"><th >productname </th></div>
-                                <div className="product_heading2"><th>product weight</th></div>
-                                <div className="product_heading3"> <th>amount</th></div>
-                                </div>
+             <div>
+                 <table >
+                     <tr>
+                        <div className="product_heading1">
+                            <div className="product_heading"><th >productname </th></div>
+                            <div className="product_heading2"><th>product weight</th></div>
+                            <div className="product_heading3"> <th>amount</th></div>
+                         </div>
                             </tr>
                         </table>
                     </div>
-
-                    {this.state.data.map(name => {
-                        if (name.volunteersId === "5e1c42df23a839455334b4a0") {
-                            return (
-                                <div>
-                                    <table>
-                                        <tr>
-                                            <div className="product_card" >
-                                            <div className="product_card1"><td>{name.productName}</td></div>
-                                            <div className="product_card2"><td>{name.productWeight}</td></div>
-                                            <div className="product_card3"><td>{name.Amount}</td></div>
-                                            </div>
-                                        </tr>
-                                    </table><br></br>
-
-                                </div>
-
-
-
-                            )
-
-                        }
-                    })}</div>
-                    </div>
-                    <Navbar/>
-                    <Footer/>
-            </div>
-
-        );
+      {this.state.data.map(name => {
+      if (name.volunteersId === "5e1c42df23a839455334b4a0") {
+          return (
+              <div>
+                  <table>
+                      <tr>
+                        <div className="product_card" >
+                          <div className="product_card1"><td>{name.productName}</td></div>
+                          <div className="product_card2"><td>{name.productWeight}</td></div>
+                          <div className="product_card3"><td>{name.Amount}</td></div>
+                         </div>
+                      </tr>
+                  </table><br></br>
+              </div>
+           )
+          }
+        })}
+        </div>
+        </div>
+        <Navbar/>
+        <Footer/>
+    </div>
+      );
     }
 }
 const mapStateToProps = (state) => {

@@ -17,14 +17,14 @@ debugger
 console.log(response);
 if(response.data === "User does not exist")
 {
-  window.alert("User does not exist");
+ alert("User does not exist");
 }
 else if(response.data === "wrong password")
 {
-    window.alert("Incorrect password");
+   alert("Incorrect password");
 }
 else {
-    BrowserHistory.push('./home')
+    BrowserHistory.push('./User_only')
 }
 
 dispatch({type:'LOGIN',payload:payload});

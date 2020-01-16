@@ -1,4 +1,25 @@
 .product_images{
-    width: 400px;
-    height: 400px;
+    width: 295px;
+    height: 250px;
+}
+.user_card{
+    display: grid;
+    grid-template-columns: 300px 300px 300px ;
+    grid-gap: 20px;;
+    margin-left: 147px;
+    margin-top: 80px;;
+}
+.Buying_button{
+  padding-left: 25px;
+  padding-right: 25px;;
+    border-radius: 30px;;
+    margin-left:150px;;
+    margin-top:-30px;
+    background-color: lightblue;
+}
+.card_border{
+    border:2px solid black;
+}
+.product_fontclr{
+    color:#483d44;
 }

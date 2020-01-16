@@ -38,7 +38,9 @@
 }
 .donatebtn{
     margin:10px;
-    background: rgb(240, 4, 102);
+    background: rgb(114, 201, 189);
+    padding:8px;
+    border-radius: 10px;
 }
 /* .inputdonation{ */
     /* background: transparent; */

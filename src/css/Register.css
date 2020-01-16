@@ -1,51 +1,4 @@
-/* /* 
-  .formDiv{
-    margin-top: 150px;
-  }
-  
-  form label, form input {
-    display: block;
-   margin-left: 370px;
-    width: 40%
-  }
-  
-  form input {
-    padding: 10px;
-    border: solid 1px #BDC7D8;
-  
-  }
-  
-  .button {
-    background-color: #00BFFF;
-    border-color: #3ac162;
-    font-weight: bold;
-    padding: 12px 15px;
-    color: #ffffff;
-    width: 10%;
-  }
-  
-  /* .errorMsg {
-    color: #cc0000;
-    margin-bottom: 12px;
-  } */
-  
-  /* .sucessMsg {
-    color: #6B8E23;
-    margin-bottom: 10px;
-  }
-  .imgi{
-    width:60px;
-    height: 60px;
-    margin-top:-17px ;
-    background-color:blanchedalmond;
-    border-radius: 70px;
-    margin-left: -243px;
-} 
-h3{
-    margin-top: -37px;
-} */ */
-/* .inputfeild{
-  width */
+
   .register
   {
       background-color: gainsboro;
@@ -79,4 +32,16 @@ h3{
   label{
     margin-left: -0270px;
     margin-top: 90px;
+    color: black;
+    /* display: block; */
+  }
+  .next_login{
+    margin-top: -21px;
+    color:purple;
+  }
+  .regcontnt{
+margin-top: -25px;
+  }
+  h1{
+    margin-top: 50px;;
   }
