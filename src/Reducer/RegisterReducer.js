@@ -10,8 +10,7 @@ const initialState={
 export default(state = initialState,action)=>{
     debugger
     switch(action.type){
-        
-        case "REGISTER":{
+      case "REGISTER":{
         return{...state,Firstname:action.payload.Firstname,
             Lastname:action.payload.Lastname,
             email:action.payload.email,

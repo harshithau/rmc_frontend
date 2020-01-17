@@ -1,20 +1,16 @@
 import axios from 'axios';
 import BrowserHistory from '../utils/BrowserHistory';
+
 export function loginHandle(payload){
-    debugger
-const options = {
-url: 'http://localhost:4013/Signin',
-method: 'POST',
-data: payload
+   const options = {
+    url: 'http://localhost:4013/Signin',
+    method: 'POST',
+    data: payload
 };
-
-
 return function(dispatch)
-{console.log(payload)
-axios(options)
-.then(response => {
-debugger
-console.log(response);
+{
+    axios(options)
+    .then(response => {
 if(response.data === "User does not exist")
 {
  alert("User does not exist");

@@ -10,7 +10,6 @@
     position:fixed;
     top:0px;
     margin-left: -1px;
-    /* opacity: 0.8; */
     z-index: 1;
 
 }
@@ -26,16 +25,9 @@
     text-decoration:none;
     color: cadetblue;
 }
-/* .Register:hover{
-   
-    background-color: red;
-
-} */
 .Register{
     text-decoration:none;
     color: cadetblue;
-   
-
 }
 
 .Login{
@@ -71,12 +63,7 @@
     font-size: 20px;margin-top: -14px;
     margin-left: 10px;;
   }
-  
-  /* .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-  } */
-  
-  .dropdown-content {
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;

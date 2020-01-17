@@ -3,7 +3,6 @@ import '../css/volunteer1.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { productsDetails } from '../Action/Admin_action';
-import modal from 'react-modal';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -88,17 +87,15 @@ class Volunteer2 extends Component {
                                     </table><br></br>
                                   </div>
                                )
-
-                        }
+                              }
                     })}</div>
                     </div>
                     <Navbar/>
                     <Footer/>
-            </div>
-
-        );
-    }
-}
+              </div>
+                  );
+                }
+              }
 const mapStateToProps = (state) => {
     const { volunteersId, productName, productWeight, Amount } = state.Admin_reducer
     return { volunteersId, productName, productWeight, Amount }

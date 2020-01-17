@@ -6,8 +6,7 @@ const initialState={
 export default(state = initialState,action)=>{
   debugger
   switch(action.type){
-      
-      case "LOGIN":{
+     case "LOGIN":{
       return{...state,
          password:action.payload.password,
           Mobnum:action.payload.Mobnum

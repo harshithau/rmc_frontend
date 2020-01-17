@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import {volunteersHandle} from '../Action/Admin_action';
 import modal from 'react-modal';
 
-
 class Admin_page extends Component {
   constructor(props){
     super(props);
@@ -26,45 +25,27 @@ const payload = {volunteerName,marketId}
 handleChange=(e)=>{
 this.setState({[e.target.name]:e.target.value});
 }
-    
   render() {
     return (
       <div>
         <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-          
-            <div className="credentials">Note: *Admin can add the volunteers</div>
-          <div>
-            <form onSubmit={this.handleSubmit} className='signup_form'> 
-             
-            <div className="register_volunteer">
-              <input type='text' name='volunteerName' onChange={this.handleChange} className='inputtran input_box' placeholder='Enter volunteer Name'></input>
-              <p className='red'>{this.state.fnameError}</p>
-      
-              <input type='text' name='marketId' onChange={this.handleChange} className='inputtran input_box' placeholder='Enter  market id'></input>
-              <p className='red'>{this.state.lnameError}</p>
-
-             
-          
-              <button type="button" onClick={this.handleSubmit} class=" btn btn-success " class="donatebtn btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Add</button>
-              <button class="donatebtn btn btn-success " color="danger" onClick={this.toggle}>Cancel</button>
-            </div>
-            <div>
-             
-            </div>
-           
-
-
-            </form>
-            
-           
-          
+        <div className="credentials">Note: *Admin can add the volunteers</div>
+        <div>
+          <form onSubmit={this.handleSubmit} className='signup_form'> 
+           <div className="register_volunteer">
+            <input type='text' name='volunteerName' onChange={this.handleChange} className='inputtran input_box' placeholder='Enter volunteer Name'></input>
+            <p className='red'>{this.state.fnameError}</p>
+            <input type='text' name='marketId' onChange={this.handleChange} className='inputtran input_box' placeholder='Enter  market id'></input>
+            <p className='red'>{this.state.lnameError}</p>
+            <button type="button" onClick={this.handleSubmit} class=" btn btn-success " class="donatebtn btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Add</button>
+            <button class="donatebtn btn btn-success " color="danger" onClick={this.toggle}>Cancel</button>
           </div>
-          </div>
-          
-          </div>
-         
-  );
-}
+        </form>
+       </div>
+      </div>
+     </div>
+   );
+ }
 }
 const mapStateToProps=(state)=>{
   const {volunteerName,marketId,}=state.Admin_reducer;

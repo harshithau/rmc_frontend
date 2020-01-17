@@ -23,30 +23,19 @@ class Register extends Component {
       perr: '',
       cperr: '',
       phnerr: ''
-
-
     };
   }
   onHandleChange = (event) => {
-
-    this.setState({ [event.target.name]: event.target.value });
-
-  }
-  onHandleClicks = (e) => {
-   
-        BrowserHistory.push('/LoginForm'); 
-
-  }
-  onHandleClicksCancel = (e) => {
-   
-    BrowserHistory.push('/LoginForm'); 
-
+     this.setState({ [event.target.name]: event.target.value });
+ }
+onHandleClicks = (e) => {
+   BrowserHistory.push('/login'); 
 }
-
-
-  onHandleClick = (e) => {
-    debugger;
-    e.preventDefault();
+onHandleClicksCancel = (e) => {
+   BrowserHistory.push('/'); 
+}
+onHandleClick = (e) => {
+  e.preventDefault();
     const payload = {
       Firstname: this.state.Firstname,
       Lastname: this.state.Lastname,
@@ -103,7 +92,7 @@ class Register extends Component {
     }
     else if (!this.state.Mobnum.match(/^[0-9]{10}$/)) {
       this.setState({ phnerr: "Please enter the valid number" })
-    }
+    }else
     this.props.registerHandle(payload);
    }
   render() {
@@ -116,24 +105,24 @@ class Register extends Component {
               <h1>Signup</h1>
           <div className="regcontnt">
               <div><label ><b>First Name</b></label><br /></div>
-              <div><input type="text" name="Firstname" className="one" onChange={this.onHandleChange} /><br /></div>
+              <div><input type="text" name="Firstname" className="one" onChange={this.onHandleChange}placeholder="enter your first name"/><br /></div>
               <div><p >{this.state.ferr}</p></div>
               <div><label><b>Last Name</b></label><br /></div>
-              <div><input type="text" name="Lastname" className="one" onChange={this.onHandleChange} /><br /></div>
+              <div><input type="text" name="Lastname" className="one" onChange={this.onHandleChange}placeholder="enter your last name" /><br /></div>
               <div> <p >{this.state.lerr}</p></div>
               <div><label ><b>Email</b></label><br /></div>
-              <div> <input type="text" name="email" className="one" onChange={this.onHandleChange} /><br /></div>
+              <div> <input type="text" name="email" className="one" onChange={this.onHandleChange} placeholder="enter email" /><br /></div>
               <div> <p >{this.state.uerr}</p></div>
               <div><label ><b>Password</b></label><br /></div>
-              <div> <input type="password" name="password" className="one" onChange={this.onHandleChange} /><br /><br /></div>
+              <div> <input type="password" name="password" className="one" onChange={this.onHandleChange} placeholder="enter password" /><br /><br /></div>
               <div> <p >{this.state.perr}</p></div>
-              <div> <label ><b>Confirmpassword</b></label><br /></div>
-              <div> <input type="password" name="Confirmpassword" className="one" onChange={this.onHandleChange} /><br /><br /></div>
+              <div> <label ><b>Confirm Password</b></label><br /></div>
+              <div> <input type="password" name="Confirmpassword" className="one" onChange={this.onHandleChange}placeholder="enter correct password" /><br /><br /></div>
               <div> <p >{this.state.cperr}</p></div>
               <div> <label ><b>Mobile Number</b></label><br /></div>
-              <div> <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} /><br /><br /></div>
+              <div> <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} placeholder="enter mobile number"/><br /><br /></div>
               <p >{this.state.phnerr}</p>
-              </div>
+          </div>
               <div><div href="" onClick={this.onHandleClicks} className="next_login">you have already account</div></div>
               <button onClick={this.onHandleClick} className="btn1"><b>Register</b></button><a href="" onClick={this.onHandleClicksCancel}>Cancel</a>
             </div>

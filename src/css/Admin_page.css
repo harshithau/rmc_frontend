@@ -20,11 +20,6 @@
    
     width: 340px;
 }
-/* .donatebg{
-  
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
 
 .inputtran{
     background: transparent;
@@ -42,12 +37,6 @@
     padding:8px;
     border-radius: 10px;
 }
-/* .inputdonation{ */
-    /* background: transparent; */
-    /* color: whitesmoke; */
-    /* border: 1px rgb(110, 91, 91) solid; */
-    /* width: 260px; */
-/* } */
 .rupees{
     height:28px ;
     border: 1px rgb(110, 91, 91) solid;

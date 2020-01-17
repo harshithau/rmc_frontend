@@ -12,21 +12,12 @@ import volunteer1 from './Component/volunteer1';
 import volunteer2 from './Component/volunteer2';
 import volunteer3 from './Component/volunteer3';
 import user_only from './Component/User_only';
-import CheckoutForm from './Component/CheckoutForm';
-import {Elements, StripeProvider} from 'react-stripe-elements';
+// import payment from './Component/payment';
+import Checkoutform from './Component/Checkoutform';
 function App() {
   return (
   <div className="App">
     <div className="body">
-    <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
-        <div className="example">
-          <h1>React Stripe Elements Example</h1>
-          <Elements>
-            <CheckoutForm />
-          </Elements>
-        </div>
-      </StripeProvider>
-     
    <Router>
       <switch>
         <Route exact path='/Navbar' component={Navbar}></Route>  
@@ -39,10 +30,10 @@ function App() {
         <Route exact path='/volunteer2' component={volunteer2}></Route>
         <Route exact path='/volunteer3' component={volunteer3}></Route>
         <Route exact path='/user_only' component={user_only}></Route>
-        <Route exact path='/CheckoutForm' component={CheckoutForm}></Route>
+        <Route exact path='/check' component={Checkoutform}></Route>
       </switch>
     </Router>
-    {/* </StripeProvider> */}
+ 
       </div>
    </div>
   );

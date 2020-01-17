@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../css/Admin.css';
-import logo from '../image/paddy.jpg';
 import {Card} from 'react-bootstrap';
 import flood from '../image/paddy.jpg';
 import rmc1 from  '../image/rmc1.jpg';
@@ -15,15 +14,10 @@ import {VolunteersDetails} from  '../Action/Admin_action';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-
-
 class Admin extends Component {
   state={
     data:[]
   }
-
-
- 
 componentDidMount=()=>{
   debugger;
     axios.get('http://localhost:4013/getallVolunteers')
@@ -32,8 +26,7 @@ componentDidMount=()=>{
         console.log(res)
     });
 }
-
- render() {
+render() {
   return (
     <div>
       <div className="grid">
@@ -95,17 +88,15 @@ componentDidMount=()=>{
                 )
               }
             }
-                  
-        )}
+          )}
         {this.state.data.map(name=>{
         if(name.marketId === "5e1c41cf925b504489f66760")
         {
-          return(
-            <a href='/volunteer2'>{name.volunteerName}</a>
+        return(
+          <a href='/volunteer2'>{name.volunteerName}</a>
           )
         }
       }
-              
     )}
     {this.state.data.map(name=>{
     if(name.marketId === "5e1c41f3925b504489f66762")
@@ -116,21 +107,16 @@ componentDidMount=()=>{
       }
     }
   )}
-  </div>
-    <Admin_page/>
-  </div>
-
-    
+    </div>
+      <Admin_page/>
+    </div>
     <Navbar/>
     <Footer/>
   </div>
   </div>
-
-        );
+    );
     }
 }
-
-
 export default Admin;
 
 
