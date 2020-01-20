@@ -3,7 +3,7 @@
     width:100%;
     height: 50px;
     display:grid;
-    grid-template-columns: 30px 620px  100px 158px 153px 80px  137px;
+    grid-template-columns: 30px 620px  100px 158px 146px 92px  137px;
     text-decoration:none;
     padding-top: 20px;
     font-size: 20px;
@@ -40,13 +40,13 @@
     margin-left: -245px;
     font-size: 28px;;
 }
-.Order{
+.logOut{
     text-decoration:none;
     color: cadetblue;
 
 }
 
-.dropdown {
+/* .dropdown {
     float: left;
     overflow: hidden;
   }
@@ -87,4 +87,8 @@
   
   .dropdown:hover .dropdown-content {
     display: block;
+  } */
+  .admin{
+    text-decoration:none;
+    color: cadetblue;
   }

@@ -7,27 +7,36 @@ export function loginHandle(payload){
     method: 'POST',
     data: payload
 };
+
 return function(dispatch)
 {
     axios(options)
     .then(response => {
-if(response.data === "User does not exist")
-{
- alert("User does not exist");
-}
-else if(response.data === "wrong password")
-{
-   alert("Incorrect password");
-}
-else {
-    BrowserHistory.push('./User_only')
-}
-
-dispatch({type:'LOGIN',payload:payload});
+    console.log(response);
+    sessionStorage.setItem('authentication', response.data.token)
+    sessionStorage.setItem('role', response.data.role)
+    BrowserHistory.push("/user_only");
 });
+dispatch({type:'LOGIN',payload:payload});
+}
+}
+// if(response.data === "User does not exist")
+// {
+//  alert("User does not exist");
+// }
+// else if(response.data === "wrong password")
+// {
+//    alert("Incorrect password");
+// }
+// else {
+//     BrowserHistory.push('./User_only')
+// }
 
-}
-}
+// dispatch({type:'LOGIN',payload:payload});
+// });
+
+// }
+// }
 
 
 

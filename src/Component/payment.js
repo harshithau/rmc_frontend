@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import '../css/check.css';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 class payment extends Component {
   constructor(props) {
@@ -39,6 +41,8 @@ class payment extends Component {
             </div>
             <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3"></div>
           </div>
+          <Navbar/>
+          <Footer/>
         </div>
     );
   }

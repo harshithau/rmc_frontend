@@ -24,7 +24,7 @@ function App() {
         <Route exact path='/register' component={Register}></Route> 
         <Route exact path='/login' component={LoginForm}></Route> 
         <Route exact path='/Footer' component={Footer}></Route>  
-        <Route exact path='/Home' component={Home}></Route> 
+        <Route exact path='/' component={Home}></Route> 
         <Route exact path='/Admin' component={Admin}></Route> 
         <Route exact path='/volunteer1' component={volunteer1}></Route>
         <Route exact path='/volunteer2' component={volunteer2}></Route>

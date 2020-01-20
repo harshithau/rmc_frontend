@@ -7,6 +7,12 @@ class Navbar extends Component {
   state={
     visible:false
   }
+  logout =()=>{
+    sessionStorage.removeItem('authentication',"")
+    sessionStorage.removeItem('role',"")
+    this.setState({visible: false})
+    BrowserHistory.push('/')
+  }
   componentDidMount=()=>{
     sessionStorage.getItem('role')=='admin' ? this.setState({visible: false}) : this.setState({visible: true})
   }
@@ -30,15 +36,10 @@ class Navbar extends Component {
             <img src={profile} className="navlogo"/>
             <a className="heading">Online Rmc Service</a>
             <a className="home"  onClick={this.onHome}>Home</a>
-            <div class="dropdown">
-              <button class="dropbtn ">RMC Details</button>
-              <div class="dropdown-content">
-              <a  onClick={this.onUser}>Admin</a> </div>
-            </div> 
-             <a hidden={this.state.visible} href="/Admin"><button className="logOut">Admin</button></a>
+             <a hidden={this.state.visible} href="/Admin" className="admin">Admin</a>
           <a className="Register"onClick={this.onHandleClick}>Register</a>
           <a className="Login"onClick={this.onChange}>Login</a>
-          <a className="Order" href='/'>Order</a>
+          <a className="logOut"  onClick={this.logout}>Log Out</a>
         </nav>
       </div>
         );
