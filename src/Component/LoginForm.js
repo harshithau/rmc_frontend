@@ -13,7 +13,7 @@ class LoginForm extends Component {
     super(props);
     this.state = {
      password: '',
-      Mobnum: '',
+      email: '',
       perr: '',
       phnerr: ''
     };
@@ -26,39 +26,40 @@ class LoginForm extends Component {
     e.preventDefault();
     const payload = {
       password: this.state.password,
-      Mobnum: this.state.Mobnum
+      email: this.state.email
     }
   if ( this.state.password.length === 0 && this.state.Mobnum.length === 0) {
       this.setState({
       perr: "Password is required",
-      phnerr: "Phonumber is required"
+      phnerr: "email is required"
       })
     }
     else if (this.state.password.length === 0) {
       this.setState({ perr: "Password is required" })
     }
-    else if (this.state.Mobnum.length === 0) {
+    else if (this.state.email.length === 0) {
       this.setState({ phnerr: "Password is required" })
     }
     else if (!this.state.password.match(/^[@#][A-Za-z0-9]{9,11}$/)) {
       this.setState({ perr: "Please enter the valid password" })
     }
-   else if (!this.state.Mobnum.match(/^[0-9]{10}$/)) {
-      this.setState({ phnerr: "Please enter the valid number" })
+   else if (!this.state.email.match(/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/)) {
+      this.setState({ phnerr: "Please enter the Valid email" })
     }
     this.props.loginHandle(payload);
   }
   render() {
     return (
       <div className="register">
-        <div class="container">
+        <h3>Login here</h3>
+        <div class="container_login">
           <div class="row">
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4"></div>
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4 frm">
               <form>
-            <h3>Login here</h3>
-            <label ><b>Mobile Number</b></label>
-            <div> <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} /></div> 
+            
+            <label ><b>Email </b></label>
+            <div> <input type="text" name="email" className="one" onChange={this.onHandleChange} /></div> 
             <p >{this.state.phnerr}</p>
             <label ><b>Password</b></label>
             <div><input type="password" name="password" className="one" onChange={this.onHandleChange} /><br /><br /></div>
@@ -76,8 +77,8 @@ class LoginForm extends Component {
   }
 }
 const mapStateToProps=(state)=>{
-  const {password,Mobnum }=state.RegisterReducer
-  return {password,Mobnum }
+  const {password,email }=state.LoginFormReducer
+  return {password,email }
 }
 export default connect(mapStateToProps,{loginHandle})  (LoginForm);
 

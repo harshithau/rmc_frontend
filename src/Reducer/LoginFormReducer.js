@@ -1,6 +1,6 @@
 const initialState={
   password:'',
-  Mobnum:''
+  email:''
 }
 
 export default(state = initialState,action)=>{
@@ -9,7 +9,7 @@ export default(state = initialState,action)=>{
      case "LOGIN":{
       return{...state,
          password:action.payload.password,
-          Mobnum:action.payload.Mobnum
+         email:action.payload.email
       }
   }
   default:

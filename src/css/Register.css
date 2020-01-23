@@ -1,44 +1,45 @@
 
-  .register
+.register
   {
     background-color: gainsboro;
     padding-top: 30px;
   
   }
-  .frm
+.frm
   {
    padding-left: 10px;
   }
-  .btn1
+.btn1
   {
     height: 35px;
     background-color: blue;
     color: white;
   }
-  a
+a
   {
      margin-left: 15px;
   }
-  .one
+.one
   {
       width: 35%;
       padding: 7px;
   }
-  p{
+p{
       color: red;
   }
-  label{
-    margin-left: -0270px;
+label{
     margin-top: 90px;
     color: black;
   }
-  .next_login{
-    margin-top: -21px;
+.next_login{
+    margin-top: -300px;
     color:purple;
   }
-  .regcontnt{
-margin-top: -25px;
+.regcontnt{
+      background-color: rgb(71, 121, 121);
+      margin: 300px;
+      margin-top: 50px;;
+      box-shadow: 20px 20px  20px 20px gray;
+      border-radius: 30px;
   }
-  h1{
-    margin-top: 50px;;
-  }
+  

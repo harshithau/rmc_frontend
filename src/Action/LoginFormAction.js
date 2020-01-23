@@ -20,24 +20,3 @@ return function(dispatch)
 dispatch({type:'LOGIN',payload:payload});
 }
 }
-// if(response.data === "User does not exist")
-// {
-//  alert("User does not exist");
-// }
-// else if(response.data === "wrong password")
-// {
-//    alert("Incorrect password");
-// }
-// else {
-//     BrowserHistory.push('./User_only')
-// }
-
-// dispatch({type:'LOGIN',payload:payload});
-// });
-
-// }
-// }
-
-
-
-

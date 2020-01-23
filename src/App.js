@@ -33,6 +33,7 @@ function App() {
         <Route exact path='/check' component={Checkoutform}></Route>
       </switch>
     </Router>
+    
  
       </div>
    </div>

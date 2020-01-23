@@ -23,7 +23,7 @@ class Navbar extends Component {
     BrowserHistory.push('/login')
   }
   onHome(){
-    BrowserHistory.push('/Home')
+    BrowserHistory.push('/')
   }
   onUser(){
     BrowserHistory.push('/login')

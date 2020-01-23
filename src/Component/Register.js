@@ -17,6 +17,7 @@ class Register extends Component {
       password: '',
       Confirmpassword: '',
       Mobnum: '',
+      role:'user',
       ferr: '',
       lerr: '',
       uerr: '',
@@ -35,14 +36,18 @@ onHandleClicksCancel = (e) => {
    BrowserHistory.push('/'); 
 }
 onHandleClick = (e) => {
+  debugger;
   e.preventDefault();
     const payload = {
+      
       Firstname: this.state.Firstname,
       Lastname: this.state.Lastname,
       email: this.state.email,
       password: this.state.password,
       Confirmpassword: this.state.Confirmpassword,
-      Mobnum: this.state.Mobnum
+      Mobnum: this.state.Mobnum,
+      role: this.state.role
+
 
     }
   if (this.state.Firstname.length === 0 && this.state.Lastname.length === 0 && this.state.email.length === 0 && this.state.password.length === 0 && this.state.Confirmpassword.length === 0 && this.state.Mobnum.length === 0) {
@@ -102,7 +107,7 @@ onHandleClick = (e) => {
           <div class="row">
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4"></div>
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4 frm">
-              <h1>Signup</h1>
+            
           <div className="regcontnt">
               <div><label ><b>First Name</b></label><br /></div>
               <div><input type="text" name="Firstname" className="one" onChange={this.onHandleChange}placeholder="enter your first name"/><br /></div>
@@ -122,6 +127,13 @@ onHandleClick = (e) => {
               <div> <label ><b>Mobile Number</b></label><br /></div>
               <div> <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} placeholder="enter mobile number"/><br /><br /></div>
               <p >{this.state.phnerr}</p>
+              <div>
+                                <label  className="name2" ><b>role :</b></label>
+                                <select name="role" onChange={this.onHandleChange}>
+                                    <option >user</option>
+                                    <option>admin</option>
+                                </select>
+                            </div>
           </div>
               <div><div href="" onClick={this.onHandleClicks} className="next_login">you have already account</div></div>
               <button onClick={this.onHandleClick} className="btn1"><b>Register</b></button><a href="" onClick={this.onHandleClicksCancel}>Cancel</a>
@@ -137,8 +149,8 @@ onHandleClick = (e) => {
   }
 }
 const mapStateToProps=(state)=>{
-  const {Firstname,Lastname,email,password,Confirmpassword,Mobnum }=state.RegisterReducer
-  return {Firstname,Lastname,email,password,Confirmpassword,Mobnum }
+  const {Firstname,Lastname,email,password,Confirmpassword,Mobnum,role }=state.RegisterReducer
+  return {Firstname,Lastname,email,password,Confirmpassword,Mobnum ,role}
 }
 export default connect(mapStateToProps,{registerHandle})  (Register);
 

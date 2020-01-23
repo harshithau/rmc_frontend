@@ -2,6 +2,8 @@ import axios from 'axios'
 import BrowserHistory from '../utils/BrowserHistory';
 
 export function registerHandle(payload){
+  debugger;
+  console.log(payload)
  const options = {
     url: 'http://localhost:4013/Signup',
     method: 'POST',

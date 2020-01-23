@@ -3,6 +3,7 @@ import { CardElement, injectStripe } from 'react-stripe-elements';
 import '../css/check.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import BrowserHistory from '../utils/BrowserHistory'
 
 class payment extends Component {
   constructor(props) {
@@ -24,19 +25,25 @@ class payment extends Component {
       alert("Your booking successfully")
       if (response.ok) this.setState({complete: true});
   }
-
+logout =()=>{
+    sessionStorage.removeItem('authentication',"")
+    sessionStorage.removeItem('role',"")
+    this.setState({visible: false})
+    BrowserHistory.push('/')
+  }
   render() {
     if (this.state.complete) return <h1>Purchase Complete</h1>;
+   
     return (
         <div class="container">
           <div class="row">
+         
             <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3"></div>
             <div class="col-sm-6 col-lg-6 col-md-6 col-xs-6">
               <div className="Checkout">
                 <p></p>
                 <CardElement />
                 <button class="pay" onClick={this.submit}>Pay</button>
-                {/* <button class="pay" onClick={this.submit}></button> */}
               </div>
             </div>
             <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3"></div>

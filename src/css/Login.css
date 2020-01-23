@@ -8,5 +8,18 @@
     padding: 30px;;
 }
 h3{
-    margin-top: 150px;;
+    margin-top: 77px;;
+    font-size: 20px;
+    font-family:Arial;
+}
+.container_login{
+    background-color: rgb(71, 121, 121);
+ margin: 300px;
+margin-top: 50px;; 
+box-shadow: 20px 20px  20px 20px gray;
+border-radius: 30px;
+padding-top:40px;
+}
+label{
+    margin-top: 10px;
 }
