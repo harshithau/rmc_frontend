@@ -18,9 +18,17 @@ class LoginForm extends Component {
       phnerr: ''
     };
   }
+  
   onHandleChange = (event) => {
      this.setState({ [event.target.name]: event.target.value });
   }
+  onConfirm=(e)=>{
+    sessionStorage.setItem('change',this.state.email)
+    BrowserHistory.push('/confirmmail');
+}
+  onHandleClicks = (e) => {
+    BrowserHistory.push('/register'); 
+ }
   onHandleClick = (e) => {
     debugger;
     e.preventDefault();
@@ -28,7 +36,9 @@ class LoginForm extends Component {
       password: this.state.password,
       email: this.state.email
     }
-  if ( this.state.password.length === 0 && this.state.Mobnum.length === 0) {
+    
+   
+  if (this.state.password.length === 0 && this.state.Mobnum.length === 0) {
       this.setState({
       perr: "Password is required",
       phnerr: "email is required"
@@ -56,19 +66,19 @@ class LoginForm extends Component {
           <div class="row">
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4"></div>
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4 frm">
-              <form>
-            
+            <form>
             <label ><b>Email </b></label>
             <div> <input type="text" name="email" className="one" onChange={this.onHandleChange} /></div> 
             <p >{this.state.phnerr}</p>
             <label ><b>Password</b></label>
             <div><input type="password" name="password" className="one" onChange={this.onHandleChange} /><br /><br /></div>
             <div> <p >{this.state.perr}</p></div>
+            <div><div href="" onClick={this.onHandleClicks} className="login_back">you  have to register</div></div>
             <button onClick={this.onHandleClick} className="btn1"><b>Login</b></button><a href="" onClick={this.onHandleClicksCancel}>Cancel</a>
+            <a onClick={this.onConfirm } className="forgetpassword">Forget Password</a>
             </form>
             </div>
-           
-          </div>
+           </div>
         </div>
        <Navbar/>
        <Footer/>
