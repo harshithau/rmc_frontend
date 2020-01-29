@@ -1,5 +1,5 @@
 .btn1{
-    margin-bottom: 100px;;
+    margin-bottom: 2px;;
 }
 .regcont{
     margin:70px;
@@ -13,7 +13,7 @@ h3{
     font-family:Arial;
 }
 .container_login{
-    background-color: rgb(71, 121, 121);
+background-color: rgb(71, 121, 121);
  margin: 300px;
 margin-top: 50px;; 
 box-shadow: 20px 20px  20px 20px gray;
@@ -22,4 +22,16 @@ padding-top:40px;
 }
 label{
     margin-top: 10px;
+}
+.forgetpassword{
+    margin-top: -100px;;
+    color: red ;
+    margin-left: 30px;;
+}
+/* .login_back{
+    margin-bottom: -40px;
+} */
+.modalbody{
+    /* width: 79%; */
+    margin: 168px;
 }

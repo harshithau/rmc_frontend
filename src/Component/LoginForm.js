@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import '../css/Register.css';
 import '../css/Login.css';
+import Modal from 'react-modal';
 import BrowserHistory from '../utils/BrowserHistory';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import {loginHandle} from '../Action/LoginFormAction';
+import Forgetpassword from './Forgetpassword';
 
 
 class LoginForm extends Component {
@@ -15,17 +17,27 @@ class LoginForm extends Component {
      password: '',
       email: '',
       perr: '',
-      phnerr: ''
+      phnerr: '',
+      modalIsOpen: false
     };
   }
+  
+openModal=()=> {
+  sessionStorage.setItem('change',this.state.email)
+  this.setState({modalIsOpen: true});
+  }
+  closeModal=()=> {
+  this.setState({modalIsOpen: false});
+  }
+  
   
   onHandleChange = (event) => {
      this.setState({ [event.target.name]: event.target.value });
   }
-  onConfirm=(e)=>{
-    sessionStorage.setItem('change',this.state.email)
-    BrowserHistory.push('/confirmmail');
-}
+//   onConfirm=(e)=>{
+//     sessionStorage.setItem('change',this.state.email)
+//     BrowserHistory.push('/confirmmail');
+// }
   onHandleClicks = (e) => {
     BrowserHistory.push('/register'); 
  }
@@ -38,7 +50,7 @@ class LoginForm extends Component {
     }
     
    
-  if (this.state.password.length === 0 && this.state.Mobnum.length === 0) {
+  if (this.state.password.length === 0 && this.state.email.length === 0) {
       this.setState({
       perr: "Password is required",
       phnerr: "email is required"
@@ -68,18 +80,30 @@ class LoginForm extends Component {
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4 frm">
             <form>
             <label ><b>Email </b></label>
-            <div> <input type="text" name="email" className="one" onChange={this.onHandleChange} /></div> 
+            <div> <input type="text" name="email" className="one" placeholder="enter your register email"  onChange={this.onHandleChange} /></div> 
             <p >{this.state.phnerr}</p>
             <label ><b>Password</b></label>
-            <div><input type="password" name="password" className="one" onChange={this.onHandleChange} /><br /><br /></div>
+            <div><input type="password" name="password" className="one"  placeholder="enter your register password"onChange={this.onHandleChange} /><br /><br /></div>
             <div> <p >{this.state.perr}</p></div>
-            <div><div href="" onClick={this.onHandleClicks} className="login_back">you  have to register</div></div>
-            <button onClick={this.onHandleClick} className="btn1"><b>Login</b></button><a href="" onClick={this.onHandleClicksCancel}>Cancel</a>
-            <a onClick={this.onConfirm } className="forgetpassword">Forget Password</a>
+          
+            <div>
+              <div><button onClick={this.onHandleClick} className="btn1"><b>Login</b></button>
+           <a href=""  className="btn2" onClick={this.onHandleClicksCancel}>Cancel</a></div>
+           <div className="login_back"><a href="" onClick={this.onHandleClicks}  >you  have to register</a></div>
+           <div><a onClick={this.openModal} className="forgetpassword">Forget Password?</a><div></div></div>
+            </div>
             </form>
             </div>
            </div>
         </div>
+            <Modal className="modalbody"
+            isOpen={this.state.modalIsOpen}
+            onAfterOpen={this.afterOpenModal}
+            onRequestClose={this.closeModal}
+            contentLabel="Register Modal"
+                >
+          <Forgetpassword/>
+            </Modal>
        <Navbar/>
        <Footer/>
       </div>

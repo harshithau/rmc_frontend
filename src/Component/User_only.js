@@ -33,7 +33,7 @@ onBuy(){
   } 
   render(){
     return (
-    <div>
+    <div className="body">
       <div className="user_card">
         <div  className="card_border">
         <img className="product_images" src={carrot}/>
@@ -42,10 +42,10 @@ onBuy(){
           return(
                 <div>
                     <div className="product_fontclr">
-                         <div ><td>PRODUCT NAME:{name.productName}</td></div>
-                        <div><td>PRODUCT WEIGHT:{name.productWeight}</td></div>
-                        <div ><td>AMOUNT:{name.Amount}</td></div>
-                        <button className="Buying_button" onClick={this.onBuy}>Buy</button><hr></hr>
+                    <div ><td>product name:{name.productName}</td></div>
+                  <div><td>product weight:{name.productWeight}</td></div>
+                  <div ><td>amount:{name.Amount}</td></div>
+                  <button className="Buying_button"  onClick={this.onBuy}>Buy</button>
                     </div>
                  </div>
                  )}
@@ -59,10 +59,10 @@ onBuy(){
           return(
             <div>
               <div className="product_fontclr">
-                  <div ><td>PRODUCT NAME:{name.productName}</td></div>
-                  <div><td>PRODUCT WEIGHT:{name.productWeight}</td></div>
-                  <div ><td>AMOUNT:{name.Amount}</td></div>
-                  <button className="Buying_button"  onClick={this.onBuy}>Buy</button><hr></hr>
+                  <div ><td>product name:{name.productName}</td></div>
+                  <div><td>product weight:{name.productWeight}</td></div>
+                  <div ><td>amount:{name.Amount}</td></div>
+                  <button className="Buying_button"  onClick={this.onBuy}>Buy</button>
               </div>
             </div>
            )}
@@ -75,12 +75,10 @@ onBuy(){
           if (name.productName === "brinjal") {
             return(
                   <div>
-                      <div className="product_fontclr">
-                          <div ><td>PRODUCT NAME:{name.productName}</td></div>
-                          <div><td>PRODUCT WEIGHT:{name.productWeight}</td></div>
-                          <div ><td>AMOUNT:{name.Amount}</td></div>
-                          <button className="Buying_button"  onClick={this.onBuy}>Buy</button><hr></hr>
-                      </div>
+                      <div ><td>product name:{name.productName}</td></div>
+                  <div><td>product weight:{name.productWeight}</td></div>
+                  <div ><td>amount:{name.Amount}</td></div>
+                  <button className="Buying_button"  onClick={this.onBuy}>Buy</button>
                   </div>
                   )}
                }
@@ -89,15 +87,13 @@ onBuy(){
       <div  className="card_border">
         <img className="product_images" src={beans}/>
         {this.state.data.map(name => {
-        if (name.productName === "Beans") {
+        if (name.productName === "beans") {
           return(
                 <div>
-                    <div className="product_fontclr">
-                         <div ><td>PRODUCT NAME:{name.productName}</td></div>
-                        <div><td>PRODUCT WEIGHT:{name.productWeight}</td></div>
-                        <div ><td>AMOUNT:{name.Amount}</td></div>
-                        <button className="Buying_button"  onClick={this.onBuy}>Buy</button><hr></hr>
-                    </div>
+                   <div ><td>product name:{name.productName}</td></div>
+                  <div><td>product weight:{name.productWeight}</td></div>
+                  <div ><td>amount:{name.Amount}</td></div>
+                  <button className="Buying_button"  onClick={this.onBuy}>Buy</button>
                  </div>
                  )}
                }
@@ -113,7 +109,7 @@ onBuy(){
                           <div ><td>PRODUCT NAME:{name.productName}</td></div>
                           <div><td>PRODUCT WEIGHT:{name.productWeight}</td></div>
                           <div ><td>AMOUNT:{name.Amount}</td></div>
-                          <button className="Buying_button"  onClick={this.onBuy}>Buy</button><hr></hr>
+                          <button className="Buying_button"  onClick={this.onBuy}>Buy</button>
                       </div>
                   </div>
                   )}
@@ -130,7 +126,7 @@ onBuy(){
                           <div ><td>PRODUCT NAME:{name.productName}</td></div>
                           <div><td>PRODUCT WEIGHT:{name.productWeight}</td></div>
                           <div ><td>AMOUNT:{name.Amount}</td></div>
-                          <button className="Buying_button"  onClick={this.onBuy}>Buy</button><hr></hr>
+                          <button className="Buying_button"  onClick={this.onBuy}>Buy</button>
                       </div>
                   </div>
                 )}
@@ -147,7 +143,7 @@ onBuy(){
                         <div ><td>PRODUCT NAME:{name.productName}</td></div>
                         <div><td>PRODUCT WEIGHT:{name.productWeight}</td></div>
                         <div ><td>AMOUNT:{name.Amount}</td></div>
-                        <button className="Buying_button"  onClick={this.onBuy}>Buy</button><hr></hr>
+                        <button className="Buying_button"  onClick={this.onBuy}>Buy</button>
                     </div>
                 </div>
               )}
@@ -164,7 +160,7 @@ onBuy(){
                           <div ><td>PRODUCT NAME:{name.productName}</td></div>
                           <div><td>PRODUCT WEIGHT:{name.productWeight}</td></div>
                           <div ><td>AMOUNT:{name.Amount}</td></div>
-                          <button className="Buying_button"  onClick={this.onBuy}>Buy</button><hr></hr>
+                          <button className="Buying_button"  onClick={this.onBuy}>Buy</button>
                       </div>
                   </div>
               )}
@@ -181,7 +177,7 @@ onBuy(){
                          <div ><td>PRODUCT NAME:{name.productName}</td></div>
                         <div><td>PRODUCT WEIGHT:{name.productWeight}</td></div>
                         <div ><td>AMOUNT:{name.Amount}</td></div>
-                        <button className="Buying_button"  onClick={this.onBuy}>Buy</button><hr></hr>
+                        <button className="Buying_button"  onClick={this.onBuy}>Buy</button>
                     </div>
                  </div>
                  )}

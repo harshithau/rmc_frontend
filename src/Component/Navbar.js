@@ -5,7 +5,8 @@ import BrowserHistory from '../utils/BrowserHistory'
 
 class Navbar extends Component {
   state={
-    visible:false
+    visible:false,
+    login:true
   }
   logout =()=>{
     sessionStorage.removeItem('authentication',"")

@@ -29,7 +29,7 @@ function App() {
     <div className="body">
    <Router>
       <Switch>
-      <Route exact path='/' component={Home}></Route> 
+       <Route exact path='/' component={Home}></Route> 
         <Route exact path='/Navbar' component={Navbar}></Route>  
         <Route exact path='/register' component={Register}></Route> 
         <Route exact path='/login' component={LoginForm}></Route> 
@@ -43,9 +43,7 @@ function App() {
         <PrivateRoute exact path='/check' component={Checkoutform}></PrivateRoute>
       </Switch>
     </Router>
-    
- 
-      </div>
+    </div>
    </div>
   );
 }

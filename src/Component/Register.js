@@ -4,7 +4,7 @@ import '../css/Register.css';
 import BrowserHistory from '../utils/BrowserHistory';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import {registerHandle} from '../Action/signupAction';
+import { registerHandle } from '../Action/signupAction';
 
 
 class Register extends Component {
@@ -17,7 +17,7 @@ class Register extends Component {
       password: '',
       Confirmpassword: '',
       Mobnum: '',
-      role:'user',
+      role: 'user',
       ferr: '',
       lerr: '',
       uerr: '',
@@ -27,19 +27,19 @@ class Register extends Component {
     };
   }
   onHandleChange = (event) => {
-     this.setState({ [event.target.name]: event.target.value });
- }
-onHandleClicks = (e) => {
-   BrowserHistory.push('/login'); 
-}
-onHandleClicksCancel = (e) => {
-   BrowserHistory.push('/'); 
-}
-onHandleClick = (e) => {
-  debugger;
-  e.preventDefault();
+    this.setState({ [event.target.name]: event.target.value });
+  }
+  onHandleClicks = (e) => {
+    BrowserHistory.push('/login');
+  }
+  onHandleClicksCancel = (e) => {
+    BrowserHistory.push('/register');
+  }
+  onHandleClick = (e) => {
+    debugger;
+    e.preventDefault();
     const payload = {
-      
+
       Firstname: this.state.Firstname,
       Lastname: this.state.Lastname,
       email: this.state.email,
@@ -50,9 +50,9 @@ onHandleClick = (e) => {
 
 
     }
-  if (this.state.Firstname.length === 0 && this.state.Lastname.length === 0 && this.state.email.length === 0 && this.state.password.length === 0 && this.state.Confirmpassword.length === 0 && this.state.Mobnum.length === 0) {
+    if (this.state.Firstname.length === 0 && this.state.Lastname.length === 0 && this.state.email.length === 0 && this.state.password.length === 0 && this.state.Confirmpassword.length === 0 && this.state.Mobnum.length === 0) {
       this.setState({
-        ferr: "Firstname is required", 
+        ferr: "Firstname is required",
         lerr: "Lastname is required",
         uerr: "Email is required",
         perr: "Password is required",
@@ -97,9 +97,9 @@ onHandleClick = (e) => {
     }
     else if (!this.state.Mobnum.match(/^[0-9]{10}$/)) {
       this.setState({ phnerr: "Please enter the valid number" })
-    }else
-    this.props.registerHandle(payload);
-   }
+    } else
+      this.props.registerHandle(payload);
+  }
   render() {
     return (
       <div className="register">
@@ -107,50 +107,51 @@ onHandleClick = (e) => {
           <div class="row">
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4"></div>
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4 frm">
-            
-          <div className="regcontnt">
-              <div><label ><b>First Name</b></label><br /></div>
-              <div><input type="text" name="Firstname" className="one" onChange={this.onHandleChange}placeholder="enter your first name"/><br /></div>
-              <div><p >{this.state.ferr}</p></div>
-              <div><label><b>Last Name</b></label><br /></div>
-              <div><input type="text" name="Lastname" className="one" onChange={this.onHandleChange}placeholder="enter your last name" /><br /></div>
-              <div> <p >{this.state.lerr}</p></div>
-              <div><label ><b>Email</b></label><br /></div>
-              <div> <input type="text" name="email" className="one" onChange={this.onHandleChange} placeholder="enter email" /><br /></div>
-              <div> <p >{this.state.uerr}</p></div>
-              <div><label ><b>Password</b></label><br /></div>
-              <div> <input type="password" name="password" className="one" onChange={this.onHandleChange} placeholder="enter password" /><br /><br /></div>
-              <div> <p >{this.state.perr}</p></div>
-              <div> <label ><b>Confirm Password</b></label><br /></div>
-              <div> <input type="password" name="Confirmpassword" className="one" onChange={this.onHandleChange}placeholder="enter correct password" /><br /><br /></div>
-              <div> <p >{this.state.cperr}</p></div>
-              <div> <label ><b>Mobile Number</b></label><br /></div>
-              <div> <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} placeholder="enter mobile number"/><br /><br /></div>
-              <p >{this.state.phnerr}</p>
-              <div>
-                                <label  className="name2" ><b>role :</b></label>
-                                <select name="role" onChange={this.onHandleChange}>
-                                    <option >user</option>
-                                    <option>admin</option>
-                                </select>
-                            </div>
-          </div>
-              <div><div href="" onClick={this.onHandleClicks} className="next_login">you have already account</div></div>
-              <button onClick={this.onHandleClick} className="btn1"><b>Register</b></button><a href="" onClick={this.onHandleClicksCancel}>Cancel</a>
+
+              <div className="regcontnt">
+                <div><span><label ><b>First Name</b></label></span><br /></div>
+                <div><input type="text" name="Firstname" className="one" onChange={this.onHandleChange} placeholder="enter your first name" /><br /></div>
+                <div><p >{this.state.ferr}</p></div>
+                <div><label><b>Last Name</b></label><br /></div>
+                <div><input type="text" name="Lastname" className="one" onChange={this.onHandleChange} placeholder="enter your last name" /><br /></div>
+                <div> <p >{this.state.lerr}</p></div>
+                <div><label ><b>Email</b></label><br /></div>
+                <div> <input type="text" name="email" className="one" onChange={this.onHandleChange} placeholder="enter email" /><br /></div>
+                <div> <p >{this.state.uerr}</p></div>
+                <div><label ><b>Password</b></label></div>
+                <div> <input type="password" name="password" className="one" onChange={this.onHandleChange} placeholder="enter password" /><br /><br /></div>
+                <div> <p >{this.state.perr}</p></div>
+                {/* <div> <label ><b>Confirm Password</b></label></div>
+                <div> <input type="password" name="Confirmpassword" className="one" onChange={this.onHandleChange} placeholder="enter correct password" /><br /><br /></div>
+                <div> <p >{this.state.cperr}</p></div> */}
+                <div> <label ><b>Mobile Number</b></label></div>
+                <div> <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} placeholder="enter mobile number" /><br /><br /></div>
+                <p >{this.state.phnerr}</p>
+                <div>
+                  <label className="name2" ><b>role :</b></label>
+                  <select name="role" onChange={this.onHandleChange}>
+                    <option >user</option>
+                    <option>admin</option>
+                  </select>
+                </div><br />
+                <button onClick={this.onHandleClick} className="btn1"><b>Register</b></button><a className="btn2" href="" onClick={this.onHandleClicksCancel}>Cancel</a>
+                <div><div href="" onClick={this.onHandleClicks} className="next_login">you have already account ?</div></div>
+              </div>
+              <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4">
+              </div>
             </div>
-            <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4">
-            </div>
+
           </div>
         </div>
-       <Navbar/>
-       <Footer/>
+        <Navbar />
+        <Footer />
       </div>
     );
   }
 }
-const mapStateToProps=(state)=>{
-  const {Firstname,Lastname,email,password,Confirmpassword,Mobnum,role }=state.RegisterReducer
-  return {Firstname,Lastname,email,password,Confirmpassword,Mobnum ,role}
+const mapStateToProps = (state) => {
+  const { Firstname, Lastname, email, password, Confirmpassword, Mobnum, role } = state.RegisterReducer
+  return { Firstname, Lastname, email, password, Confirmpassword, Mobnum, role }
 }
-export default connect(mapStateToProps,{registerHandle})  (Register);
+export default connect(mapStateToProps, { registerHandle })(Register);
 

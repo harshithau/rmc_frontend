@@ -12,8 +12,10 @@
 .btn1
   {
     height: 35px;
-    background-color: blue;
+    background-color: rgb(106, 106, 204);
     color: white;
+    padding-left:8px;
+    border-radius: 15px;;
   }
 a
   {
@@ -23,17 +25,17 @@ a
   {
       width: 35%;
       padding: 7px;
+      background-color: rgb(195, 217, 218);
   }
+  .one:hover{
+   background-color:rgb(139, 100, 139);  }
 p{
       color: red;
   }
 label{
     margin-top: 90px;
-    color: black;
-  }
-.next_login{
-    margin-top: -300px;
-    color:purple;
+
+    color:white;
   }
 .regcontnt{
       background-color: rgb(71, 121, 121);
@@ -41,5 +43,19 @@ label{
       margin-top: 50px;;
       box-shadow: 20px 20px  20px 20px gray;
       border-radius: 30px;
+  }
+  .name2{
+    margin-top:-20px;
+  }
+  .next_login{
+    color:rgb(109, 11, 11);
+  }
+  .btn2{
+    border:2px solid ;
+    padding: 5px;;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    background-color: rgb(106, 106, 204); ;
   }
   
