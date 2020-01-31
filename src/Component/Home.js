@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import '../css/Home.css';
+import '../css/Home_reg.css';
 import logo from '../image/tomato.jpeg';
 import slid2 from '../image/slid2.jpg';
 import slid3 from '../image/slid1.jpeg';
@@ -10,6 +11,7 @@ import home1 from  '../image/home1.jpeg';
 import home2 from  '../image/home2.jpg';
 import home3 from  '../image/backimg.webp';
 import home4 from '../image/home3.jpg'
+import Navbar_home from './Navbar_home';
 
 const fadeProperties = {
     duration: 2000,
@@ -57,7 +59,7 @@ class Home extends Component {
         <div  className="home_text">Vitamin A keeps eyes and skin healthy<br/> and helps to protect against infections.</div>
         <div  className="home_text">Vitamin A keeps eyes and skin healthy<br/> and helps to protect against infections.</div>
       </div>
-          <Navbar/>
+          <Navbar_home/>
           <Footer/>
     </div>     
     </div>      

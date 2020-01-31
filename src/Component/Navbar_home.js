@@ -5,8 +5,7 @@ import BrowserHistory from '../utils/BrowserHistory'
 
 class Navbar extends Component {
   state={
-    visible:false,
-    hide:false
+    visible:false
   }
   logout =()=>{
     sessionStorage.removeItem('authentication',"")
@@ -16,7 +15,6 @@ class Navbar extends Component {
   }
   componentDidMount=()=>{
     sessionStorage.getItem('role')=='admin' ? this.setState({visible: false}) : this.setState({visible: true})
-    sessionStorage.getItem('authentication') ? this.setState({hide: true}) : this.setState({hide: false})
   }
  
   onHandleClick(){
@@ -36,13 +34,13 @@ class Navbar extends Component {
       return (
         <div >
           <nav className="navbar">
-            <img src={profile} className="navlogo"/>
-            <a  className="heading">Online Rmc Service</a>
-            <a   href=""className="home"  onClick={this.onHome}>Home</a>
-             <a  href="" hidden={this.state.visible} href="/Admin" className="admin">Admin</a>
-          <a  hidden={this.state.hide}  href="" className="Register"onClick={this.onHandleClick}>Register</a>
-          <a hidden={this.state.hide}  href="" className="Login"onClick={this.onChange}>Login</a>
-         <a  href="" className="logOut" onClick={this.logout}>Logout</a>
+            <img href="/" src={profile} className="navlogo"/>
+            <a className="heading">Online Rmc Service</a>
+            <a  href="/" className="home   home_home" onClick={this.onHome}>Home</a>
+             <a href="/Admin"  hidden={this.state.visible}  className="admin">Admin</a>
+          <a  href=" " className="Register home_nav" onClick={this.onHandleClick}>Register</a>
+          <a  href=" " className="Login"onClick={this.onChange}>Login</a>
+        
         </nav>
       </div>
         );

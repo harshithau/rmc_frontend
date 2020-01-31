@@ -8,8 +8,8 @@ class navComponents extends Component {
       <div className="footer">
         <div className="down">@Copyright2020</div>
         <div  className="down">www.OnlineRMCservice.com</div>
-        <div className="social">
-        <SocialIcon url="http://twitter.com/jaketrent" className="icons" />                  
+        <div >
+        <SocialIcon  className="social"url="http://twitter.com/jaketrent" className="icons" />                  
         <SocialIcon url="http://linkedin.com/in/jaketrent" className="icons" /> 
         <SocialIcon url="http://facebook.com/in/jaketrent"  className="icons"/> 
         </div>         

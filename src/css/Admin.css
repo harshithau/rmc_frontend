@@ -28,7 +28,14 @@
 h4{
   font-size: 20px;
   color:blueviolet;
+  border: black solid 1px;
+  margin-left: 90px;
+  margin-right:90px;
+  background-color: cadetblue;
+  border-radius: 50px;
+
 }
 .top{
   margin-top:98px;
+  color: #f1f0e3;
 }

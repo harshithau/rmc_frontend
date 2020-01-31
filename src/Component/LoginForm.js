@@ -4,7 +4,7 @@ import '../css/Register.css';
 import '../css/Login.css';
 import Modal from 'react-modal';
 import BrowserHistory from '../utils/BrowserHistory';
-import Navbar from './Navbar';
+import Navbar_login from './Navbar_login';
 import Footer from './Footer';
 import {loginHandle} from '../Action/LoginFormAction';
 import Forgetpassword from './Forgetpassword';
@@ -34,10 +34,6 @@ openModal=()=> {
   onHandleChange = (event) => {
      this.setState({ [event.target.name]: event.target.value });
   }
-//   onConfirm=(e)=>{
-//     sessionStorage.setItem('change',this.state.email)
-//     BrowserHistory.push('/confirmmail');
-// }
   onHandleClicks = (e) => {
     BrowserHistory.push('/register'); 
  }
@@ -73,16 +69,16 @@ openModal=()=> {
   render() {
     return (
       <div className="register">
-        <h3>Login here</h3>
+        <div className="login_heading">Login here</div>
         <div class="container_login">
           <div class="row">
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4"></div>
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4 frm">
             <form>
-            <label ><b>Email </b></label>
+            <div className="firstname"> <label ><b>Email </b></label></div>
             <div> <input type="text" name="email" className="one" placeholder="enter your register email"  onChange={this.onHandleChange} /></div> 
             <p >{this.state.phnerr}</p>
-            <label ><b>Password</b></label>
+            <div className="firstname"> <label><b>Password</b></label></div>
             <div><input type="password" name="password" className="one"  placeholder="enter your register password"onChange={this.onHandleChange} /><br /><br /></div>
             <div> <p >{this.state.perr}</p></div>
           
@@ -100,11 +96,10 @@ openModal=()=> {
             isOpen={this.state.modalIsOpen}
             onAfterOpen={this.afterOpenModal}
             onRequestClose={this.closeModal}
-            contentLabel="Register Modal"
-                >
+            contentLabel="Register Modal">
           <Forgetpassword/>
             </Modal>
-       <Navbar/>
+       <Navbar_login/>
        <Footer/>
       </div>
     );

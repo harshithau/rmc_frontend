@@ -109,27 +109,24 @@ class Register extends Component {
             <div class="col-sm-4 col-lg-4 col-md-4 col-xs-4 frm">
 
               <div className="regcontnt">
-                <div><span><label ><b>First Name</b></label></span><br /></div>
+                <div className="firstname"><span><label ><b >First Name</b></label></span><br /></div>
                 <div><input type="text" name="Firstname" className="one" onChange={this.onHandleChange} placeholder="enter your first name" /><br /></div>
                 <div><p >{this.state.ferr}</p></div>
-                <div><label><b>Last Name</b></label><br /></div>
+                <div className="firstname"><label><b>Last Name</b></label><br /></div>
                 <div><input type="text" name="Lastname" className="one" onChange={this.onHandleChange} placeholder="enter your last name" /><br /></div>
                 <div> <p >{this.state.lerr}</p></div>
-                <div><label ><b>Email</b></label><br /></div>
+                <div className="firstname"><label ><b>Email</b></label><br /></div>
                 <div> <input type="text" name="email" className="one" onChange={this.onHandleChange} placeholder="enter email" /><br /></div>
                 <div> <p >{this.state.uerr}</p></div>
-                <div><label ><b>Password</b></label></div>
+                <div className="firstname"><label ><b>Password</b></label></div>
                 <div> <input type="password" name="password" className="one" onChange={this.onHandleChange} placeholder="enter password" /><br /><br /></div>
                 <div> <p >{this.state.perr}</p></div>
-                {/* <div> <label ><b>Confirm Password</b></label></div>
-                <div> <input type="password" name="Confirmpassword" className="one" onChange={this.onHandleChange} placeholder="enter correct password" /><br /><br /></div>
-                <div> <p >{this.state.cperr}</p></div> */}
-                <div> <label ><b>Mobile Number</b></label></div>
+                <div className="firstname"> <label ><b>Mobile Number</b></label></div>
                 <div> <input type="text" name="Mobnum" className="one" onChange={this.onHandleChange} placeholder="enter mobile number" /><br /><br /></div>
                 <p >{this.state.phnerr}</p>
                 <div>
-                  <label className="name2" ><b>role :</b></label>
-                  <select name="role" onChange={this.onHandleChange}>
+                  <div className="firstname"><label className="name2" ><b>role :</b></label></div>
+                  <select  className="drap_down"name="role" onChange={this.onHandleChange}>
                     <option >user</option>
                     <option>admin</option>
                   </select>

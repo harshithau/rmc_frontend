@@ -1,14 +1,15 @@
 .credentials{
     margin-bottom: 33px;
-    color: green;
+    color:black;
     font-weight: bold;
 }
 .textfield{
     margin-top: 40px;
-    background: transparent;
+  
     height: 135px;
     width: 340px;
     border: 1px rgb(110, 91, 91) solid;
+ 
 }
 .donateleftpara{
     margin: 20px;
@@ -22,20 +23,21 @@
 }
 
 .inputtran{
-    background: transparent;
-   
+    background-color:  rgb(89, 173, 173);
     border: 1px rgb(110, 91, 91) solid;
     width: 340px;
     padding:06px;
+    border-radius: 20px;
 }
 ::placeholder{
     color: black;
 }
 .donatebtn{
     margin:10px;
-    background: rgb(114, 201, 189);
+ background-color: #1d1d33;
     padding:8px;
     border-radius: 10px;
+    color:red;
 }
 .rupees{
     height:28px ;

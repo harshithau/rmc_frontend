@@ -32,7 +32,7 @@ render() {
       <div className="grid">
         <div>
           <Card className=" mainheight li" >
-            <div className="top">Mandya Market</div>
+            <div className="top">MANDYA MARKET</div>
             <Card.Img variant="top" src={flood} />
             <Card.Body>
             <Card.Text className="market_detail">
@@ -43,7 +43,7 @@ render() {
         </div>
         <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
           <Card className="mainheight li" >
-            <div className="top">K R market Banglure</div>
+            <div className="top">K R MARKET BANGALORE</div>
             <Card.Img variant="top" src={rmc1}/>
             <Card.Body>
             <Card.Text className="market_detail">
@@ -55,7 +55,7 @@ render() {
           </Card>
           </div>
             <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <div className="top">Mysore market</div>
+            <div className="top">MYSORE MARKET</div>
             <Card className="mainheight li" >
             <Card.Img  variant="top" src={market2} />
             <Card.Body>
@@ -67,7 +67,7 @@ render() {
           </div>
             <div>
               <Card className=" mainheight li" >
-              <div className="top">Maddur</div>
+              <div className="top">MADDUR</div>
               <Card.Img variant="top" src={market3}/>
               <Card.Body>
               <Card.Text className="market_detail">
@@ -79,7 +79,7 @@ render() {
         </div>
         <div>
         <div className=" Volunteers_container">
-          <div><h4 > Volunteers</h4> 
+          <div><h4  > Volunteers</h4> 
           {this.state.data.map(name=>{
           if(name.marketId === "5e1c41dd925b504489f66761")
               {

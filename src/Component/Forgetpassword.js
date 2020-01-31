@@ -25,22 +25,13 @@ class Forgetpassword extends Component {
         const options = {
           url: 'http://localhost:4013/reset',
           method: 'PUT',
-          // headers: {
-          //   'Accept': 'application/json',
-          //   'Content-Type': 'application/json;charset=UTF-8'
-          // },
-          data: payload
+         data: payload
         };
         axios(options)
         .then(response => {
           BrowserHistory.push("/login");
         })
-        // console.log(payload)
-      
-        // axios.put(`http://localhost:4013/reset`,payload)
-        //   .then(console.log('update'))
-        //   .catch(err => console.log(err))
-        // window.location.reload();
+        
       }
   render() {
     return (

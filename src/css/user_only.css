@@ -1,7 +1,9 @@
 .product_images{
     width: 295px;
     height: 150px;
+    box-shadow: 10px 10px 10px  10px  gray;
 }
+
 .user_card{
     display: grid;
     grid-template-columns: 300px 300px 300px ;
@@ -17,15 +19,17 @@
     margin-top:-30px;
     background-color: lightblue;
 }
-/* .card_border{
-    border:2px solid black;
-} */
+
 .product_fontclr{
-    color:#483d44;
+    color:black;
+    box-shadow: 10px 10px 10px 10px  gray;
+    font-style: italic;
 }
 .body{
-    background-image:gray;
+    /* background-image:url('../image/background.jpg'); */
     background-image: no-repeat;
     background-size: cover;
+    opacity:1;;
+    background-color: rgb(93, 136, 136);
     
 }

@@ -3,6 +3,7 @@
   {
     background-color: gainsboro;
     padding-top: 30px;
+
   
   }
 .frm
@@ -16,6 +17,7 @@
     color: white;
     padding-left:8px;
     border-radius: 15px;;
+    border-color: rgb(106, 106, 204);;
   }
 a
   {
@@ -25,7 +27,8 @@ a
   {
       width: 35%;
       padding: 7px;
-      background-color: rgb(195, 217, 218);
+      background-color: rgb(23, 56, 58);
+      border-radius: 7px;
   }
   .one:hover{
    background-color:rgb(139, 100, 139);  }
@@ -43,19 +46,35 @@ label{
       margin-top: 50px;;
       box-shadow: 20px 20px  20px 20px gray;
       border-radius: 30px;
+      padding:20px;
   }
   .name2{
     margin-top:-20px;
+    color:white;
   }
   .next_login{
     color:rgb(109, 11, 11);
   }
   .btn2{
-    border:2px solid ;
+    border:2px solid  #bd1414;
     padding: 5px;;
     color: white;
     border-radius: 30px;
     text-decoration: none;
-    background-color: rgb(106, 106, 204); ;
+    background-color:#bd1414; 
+    font-size: 15px;
+    box-shadow: 1px 1px gary;
   }
-  
+  .drap_down{
+    width: 38%;
+    padding: 7px;
+    background-color: rgb(23, 56, 58);
+    border-radius: 7px;
+  }
+  .register_name{
+    margin-bottom:10px;
+  }
+  .firstname
+  {
+    margin-bottom: 10px;
+  }

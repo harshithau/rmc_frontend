@@ -64,9 +64,9 @@ class Volunteer2 extends Component {
                         <table >
                             <tr>
                               <div className="product_heading1">
-                                <div className="product_heading"><th >productname </th></div>
-                                <div className="product_heading2"><th>product weight</th></div>
-                                <div className="product_heading3"> <th>amount</th></div>
+                                <div className="product_heading"><th >PRODUCT NAME </th></div>
+                                <div className="product_heading2"><th>PRODUCT  WEIGHT</th></div>
+                                <div className="product_heading3"> <th>AMOUNT</th></div>
                                 </div>
                             </tr>
                         </table>

@@ -7,10 +7,10 @@
 .one_password{
     padding: 30px;;
 }
-h3{
+.login_heading{
     margin-top: 77px;;
-    font-size: 20px;
-    font-family:Arial;
+    font-size: 40px;
+    font-style:italic;
 }
 .container_login{
 background-color: rgb(71, 121, 121);
@@ -32,6 +32,6 @@ label{
     margin-bottom: -40px;
 } */
 .modalbody{
-    /* width: 79%; */
+    /* width: 100%; */
     margin: 168px;
 }
